@@ -1,0 +1,110 @@
+{{ 'landing-page.css' | asset_url | stylesheet_tag }}
+{{ 'section-tabs.css' | asset_url | stylesheet_tag }}
+
+{% render 'landing-page-colors' %}
+<script src="{{ 'landing-page.js' | asset_url }}" defer="defer"></script>
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="landing-tabs landing-page section-{{ section.id }}-padding" id="landing-tabs-{{ section.id }}">
+  <div class="page-width">
+    <landing-page-tabs>
+      <nav class="landing-tabs__nav" role="tablist" aria-label="Page sections">
+        {%- for block in section.blocks -%}
+          <a
+            href="#{{ block.settings.target_id }}"
+            class="landing-tabs__tab{% if forloop.first %} is-active{% endif %}"
+            data-tab="{{ block.settings.target_id }}"
+            role="tab"
+            {{ block.shopify_attributes }}
+          >
+            {{ block.settings.label }}
+          </a>
+        {%- endfor -%}
+      </nav>
+    </landing-page-tabs>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Tabs",
+  "tag": "section",
+  "class": "section-tabs",
+  "enabled_on": {
+    "templates": ["product"]
+  },
+  "blocks": [
+    {
+      "type": "tab",
+      "name": "Tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "How it Works"
+        },
+        {
+          "type": "text",
+          "id": "target_id",
+          "label": "Target section ID",
+          "info": "Must match the HTML ID of the target section",
+          "default": "delivery"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "sticky",
+      "label": "Sticky navigation",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tabs",
+      "blocks": [
+        { "type": "tab", "settings": { "label": "How it Works", "target_id": "delivery" } },
+        { "type": "tab", "settings": { "label": "Save Deals", "target_id": "save-deals" } },
+        { "type": "tab", "settings": { "label": "Order Journey", "target_id": "order-journey" } },
+        { "type": "tab", "settings": { "label": "FAQ", "target_id": "faq" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

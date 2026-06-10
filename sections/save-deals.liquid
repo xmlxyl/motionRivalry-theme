@@ -1,0 +1,155 @@
+{{ 'landing-page.css' | asset_url | stylesheet_tag }}
+{{ 'section-save-deals.css' | asset_url | stylesheet_tag }}
+
+{% render 'landing-page-colors' %}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="save-deals landing-page section-{{ section.id }}-padding" id="save-deals">
+  <div class="page-width">
+    <div class="save-deals__grid">
+      <div class="save-deals__content">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="landing-page__eyebrow">{{ section.settings.eyebrow }}</p>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 class="landing-page__heading save-deals__heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+
+        <ul class="landing-page__check-list">
+          {%- for block in section.blocks -%}
+            <li {{ block.shopify_attributes }}>
+              <span class="landing-page__check-icon">
+                <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.5" fill="none"/></svg>
+              </span>
+              {{ block.settings.text }}
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+
+      <div class="save-deals__graphic">
+        <div class="save-deals__box">
+          <div class="save-deals__box-half save-deals__box-half--deposit">
+            <span class="save-deals__box-label">{{ section.settings.deposit_label }}</span>
+            <span class="save-deals__box-value">{{ section.settings.deposit_value }}</span>
+          </div>
+          <div class="save-deals__equals">=</div>
+          <div class="save-deals__box-half save-deals__box-half--save">
+            <span class="save-deals__box-label">{{ section.settings.save_label }}</span>
+            <span class="save-deals__box-value">{{ section.settings.save_value }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Save Deals",
+  "tag": "section",
+  "class": "section-save-deals",
+  "enabled_on": {
+    "templates": ["product"]
+  },
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Lock in the lowest price before launch"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Reserve Early, Save Big"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Pay a $50 Deposit Now Save up to $2100"
+    },
+    {
+      "type": "header",
+      "content": "Deal graphic"
+    },
+    {
+      "type": "text",
+      "id": "deposit_label",
+      "label": "Deposit label",
+      "default": "DEPOSIT"
+    },
+    {
+      "type": "text",
+      "id": "deposit_value",
+      "label": "Deposit value",
+      "default": "$50"
+    },
+    {
+      "type": "text",
+      "id": "save_label",
+      "label": "Save label",
+      "default": "YOU SAVE UP TO"
+    },
+    {
+      "type": "text",
+      "id": "save_value",
+      "label": "Save value",
+      "default": "$2100"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 60
+    }
+  ],
+  "presets": [
+    {
+      "name": "Save Deals",
+      "blocks": [
+        { "type": "benefit", "settings": { "text": "Lock in the lowest price before launch" } },
+        { "type": "benefit", "settings": { "text": "Get your deposit refunded after campaign ends" } },
+        { "type": "benefit", "settings": { "text": "Exclusive early backer perks included" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

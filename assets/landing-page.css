@@ -1,0 +1,140 @@
+/* Shared landing page styles */
+.landing-page {
+  background-color: var(--landing-bg-primary);
+  color: var(--landing-text-body);
+}
+
+.landing-page__eyebrow {
+  color: var(--landing-accent-primary);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 1rem;
+}
+
+.landing-page__heading {
+  color: var(--landing-text-heading);
+  font-size: clamp(2.4rem, 4vw, 4.8rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 1.6rem;
+  text-transform: uppercase;
+}
+
+.landing-page__subheading {
+  color: var(--landing-text-body);
+  font-size: 1.6rem;
+  line-height: 1.5;
+  margin: 0 0 2.4rem;
+}
+
+.landing-page__check-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.landing-page__check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  color: var(--landing-text-body);
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
+.landing-page__check-icon {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--landing-accent-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.2rem;
+}
+
+.landing-page__check-icon svg {
+  width: 1rem;
+  height: 1rem;
+  fill: var(--landing-text-heading);
+}
+
+.landing-page__btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  width: 100%;
+  padding: 1.6rem 2.4rem;
+  background: var(--landing-accent-primary);
+  color: var(--landing-text-heading);
+  border: none;
+  border-radius: 0.4rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.landing-page__btn-primary:hover {
+  opacity: 0.9;
+}
+
+.landing-page__badge {
+  display: inline-block;
+  padding: 0.4rem 1.2rem;
+  background: var(--landing-accent-primary);
+  color: var(--landing-text-heading);
+  border-radius: 2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.landing-page__badge--save {
+  background: var(--landing-accent-primary);
+  border-radius: 0.4rem;
+  padding: 0.8rem 1.6rem;
+  font-size: 1.3rem;
+}
+
+.landing-page__step-number {
+  width: 4.8rem;
+  height: 4.8rem;
+  border-radius: 50%;
+  background: var(--landing-accent-primary);
+  color: var(--landing-text-heading);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 auto 1.6rem;
+}
+
+.landing-page__icon-circle {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem auto 0;
+  color: var(--landing-text-heading);
+}
+
+.landing-page__icon-circle svg {
+  width: 3.2rem;
+  height: 3.2rem;
+  stroke: currentColor;
+  fill: none;
+}

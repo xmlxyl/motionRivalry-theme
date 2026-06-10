@@ -1,0 +1,16 @@
+{%- comment -%}
+  Landing page color variables from theme settings.
+  Include once per landing page section.
+{%- endcomment -%}
+{%- style -%}
+  .landing-page {
+    --landing-bg-primary: {{ settings.landing_bg_primary }};
+    --landing-bg-secondary: {{ settings.landing_bg_secondary }};
+    --landing-bg-card: {{ settings.landing_bg_card }};
+    --landing-accent-primary: {{ settings.landing_accent_primary }};
+    --landing-accent-secondary: {{ settings.landing_accent_secondary }};
+    --landing-text-heading: {{ settings.landing_text_heading }};
+    --landing-text-body: {{ settings.landing_text_body }};
+    --landing-text-muted: {{ settings.landing_text_muted }};
+  }
+{%- endstyle -%}

@@ -1465,5 +1465,70 @@
         "default": "scheme-1"
       }
     ]
+  },
+  {
+    "name": "Landing Page Colors",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Background colors"
+      },
+      {
+        "type": "color",
+        "id": "landing_bg_primary",
+        "label": "Primary background",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "landing_bg_secondary",
+        "label": "Secondary background",
+        "default": "#121212"
+      },
+      {
+        "type": "color",
+        "id": "landing_bg_card",
+        "label": "Card background",
+        "default": "#1A1A1A"
+      },
+      {
+        "type": "header",
+        "content": "Accent colors"
+      },
+      {
+        "type": "color",
+        "id": "landing_accent_primary",
+        "label": "Primary accent (orange)",
+        "default": "#FF5722"
+      },
+      {
+        "type": "color",
+        "id": "landing_accent_secondary",
+        "label": "Secondary accent (Shop Pay)",
+        "default": "#5A31F4"
+      },
+      {
+        "type": "header",
+        "content": "Text colors"
+      },
+      {
+        "type": "color",
+        "id": "landing_text_heading",
+        "label": "Heading text",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "landing_text_body",
+        "label": "Body text",
+        "default": "#B0B0B0"
+      },
+      {
+        "type": "color",
+        "id": "landing_text_muted",
+        "label": "Muted text",
+        "default": "#888888"
+      }
+    ]
   }
 ]

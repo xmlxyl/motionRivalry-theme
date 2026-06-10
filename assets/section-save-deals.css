@@ -1,0 +1,90 @@
+.save-deals {
+  background: var(--landing-bg-secondary);
+}
+
+.save-deals__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media screen and (min-width: 990px) {
+  .save-deals__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+  }
+}
+
+.save-deals__heading {
+  font-size: clamp(2.4rem, 3vw, 3.6rem);
+}
+
+.save-deals__graphic {
+  display: flex;
+  justify-content: center;
+}
+
+.save-deals__box {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  max-width: 48rem;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  min-height: 14rem;
+}
+
+.save-deals__box-half {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.4rem 1.6rem;
+  text-align: center;
+}
+
+.save-deals__box-half--deposit {
+  background: var(--landing-bg-card);
+}
+
+.save-deals__box-half--save {
+  background: var(--landing-accent-primary);
+}
+
+.save-deals__equals {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  background: var(--landing-bg-primary);
+  color: var(--landing-text-heading);
+  font-size: 2.4rem;
+  font-weight: 300;
+  flex-shrink: 0;
+}
+
+.save-deals__box-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.save-deals__box-half--deposit .save-deals__box-label,
+.save-deals__box-half--deposit .save-deals__box-value {
+  color: var(--landing-text-body);
+}
+
+.save-deals__box-half--save .save-deals__box-label,
+.save-deals__box-half--save .save-deals__box-value {
+  color: var(--landing-text-heading);
+}
+
+.save-deals__box-value {
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.1;
+}

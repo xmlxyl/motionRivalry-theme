@@ -1,0 +1,206 @@
+.main-product-v2__hero {
+  background-color: var(--landing-bg-primary);
+  background-size: cover;
+  background-position: center;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+.main-product-v2__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media screen and (min-width: 990px) {
+  .main-product-v2__grid {
+    grid-template-columns: 1fr 42rem;
+    gap: 4rem;
+  }
+}
+
+.main-product-v2__title {
+  margin-bottom: 1.2rem;
+}
+
+.main-product-v2__subtitle {
+  color: var(--landing-accent-primary);
+  font-size: clamp(1.6rem, 2vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 3.2rem;
+}
+
+.main-product-v2__features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-product-v2__feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  text-align: center;
+  min-width: 10rem;
+}
+
+.main-product-v2__feature-icon {
+  width: 4.8rem;
+  height: 4.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--landing-text-heading);
+}
+
+.main-product-v2__feature-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.main-product-v2__feature-icon--default svg {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
+.main-product-v2__feature-label {
+  color: var(--landing-text-heading);
+  font-size: 1.2rem;
+  font-weight: 600;
+  max-width: 12rem;
+}
+
+.main-product-v2__card {
+  background: rgba(18, 18, 18, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.2rem;
+  padding: 2.4rem;
+  position: relative;
+}
+
+.main-product-v2__card-badge {
+}
+
+.main-product-v2__card-title {
+  color: var(--landing-text-heading);
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 1.6rem 0 0.8rem;
+}
+
+.main-product-v2__deposit {
+  color: var(--landing-text-heading);
+  font-size: 4.8rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.main-product-v2__price-row {
+  margin-bottom: 1.6rem;
+}
+
+.main-product-v2__savings {
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+.main-product-v2__benefits {
+  list-style: none;
+  margin: 0 0 2.4rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.main-product-v2__benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+}
+
+.main-product-v2__benefit-icon {
+  flex-shrink: 0;
+  width: 2.4rem;
+  height: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-product-v2__benefit-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.main-product-v2__benefit-icon-fallback {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  background: var(--landing-accent-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-product-v2__benefit-icon-fallback svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.main-product-v2__benefit-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.main-product-v2__benefit-title {
+  color: var(--landing-text-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0 0 0.4rem;
+}
+
+.main-product-v2__benefit-subtitle {
+  color: var(--landing-text-body);
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.main-product-v2__dynamic-checkout {
+  margin-top: 1.2rem;
+}
+
+.main-product-v2__dynamic-checkout .shopify-payment-button {
+  margin-top: 0;
+}
+
+.main-product-v2__payment-link {
+  text-align: center;
+  margin: 1.6rem 0 0;
+}
+
+.main-product-v2__payment-link a {
+  color: var(--landing-text-muted);
+  font-size: 1.3rem;
+  text-decoration: underline;
+}
+
+.main-product-v2__submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

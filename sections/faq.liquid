@@ -1,0 +1,163 @@
+{{ 'landing-page.css' | asset_url | stylesheet_tag }}
+{{ 'component-accordion.css' | asset_url | stylesheet_tag }}
+{{ 'section-faq.css' | asset_url | stylesheet_tag }}
+
+{% render 'landing-page-colors' %}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="landing-faq landing-page section-{{ section.id }}-padding" id="faq">
+  <div class="page-width landing-faq__wrapper">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="landing-faq__heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+
+    <div class="landing-faq__list">
+      {%- for block in section.blocks -%}
+        <details
+          class="landing-faq__item"
+          id="Details-{{ block.id }}-{{ section.id }}"
+          {% if section.settings.open_first and forloop.first %}open{% endif %}
+          {{ block.shopify_attributes }}
+        >
+          <summary class="landing-faq__question">
+            <span>{{ block.settings.question }}</span>
+            <span class="landing-faq__icon" aria-hidden="true">
+              <svg class="landing-faq__icon-plus" viewBox="0 0 14 14" aria-hidden="true"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.5"/></svg>
+              <svg class="landing-faq__icon-minus" viewBox="0 0 14 14" aria-hidden="true"><path d="M1 7h12" stroke="currentColor" stroke-width="1.5"/></svg>
+            </span>
+          </summary>
+          <div class="landing-faq__answer rte">
+            {{ block.settings.answer }}
+          </div>
+        </details>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "tag": "section",
+  "class": "section-faq",
+  "enabled_on": {
+    "templates": ["product"]
+  },
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "What is the $50 deposit for?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>The $50 deposit reserves your spot and gives you early access to the lowest pricing when our Kickstarter campaign launches. It is fully refundable if you change your mind.</p>"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_first",
+      "label": "Open first question by default",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 60
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ",
+      "blocks": [
+        {
+          "type": "question",
+          "settings": {
+            "question": "What is the $50 deposit for?",
+            "answer": "<p>The $50 deposit reserves your spot and gives you early access to the lowest pricing when our Kickstarter campaign launches.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Is the deposit refundable?",
+            "answer": "<p>Yes. Your deposit is 100% refundable at any time before the campaign ends, no questions asked.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "When will the product ship?",
+            "answer": "<p>We expect to begin shipping in Q4 2026. Backers will receive regular updates throughout production.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Do I need to back on Kickstarter?",
+            "answer": "<p>Yes. After paying your deposit, you'll need to complete your pledge on Kickstarter to lock in early-bird pricing and perks.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "How much can I save?",
+            "answer": "<p>Early backers can save up to $2100 compared to the expected retail price.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Where do you ship?",
+            "answer": "<p>We ship worldwide. Shipping costs will be calculated at checkout on Kickstarter.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
