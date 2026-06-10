@@ -1,0 +1,151 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "image_banner_xrD4zk": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify://shop_images/b0ed7c8b515384634e50a7fc17a6c057.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-4",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "collapsible_content_FBKRM6": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_jdBDbU": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "PERFORMENCE ENHANCEMENT",
+            "icon": "none",
+            "row_content": "<p>With our integrated hardware system, including motion sensors, wearables, and other smart devices, our AI technology can analyze an athlete's performance data, including metrics such as speed, agility, and endurance capability. It then creates personalized training programs that are tailored to optimize their strengths and set new goals for improvement.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_NGjbfG": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "QUANTITATIVE ANALYTIC PLATFORM",
+            "icon": "none",
+            "row_content": "<p>By performing detailed biomechanical analyses to identify the most efficient movement patterns for each athlete. This helps in refining techniques, reducing energy expenditure, and minimizing the risk of injury. Athletes can track their performance over time with our data tools, allowing them to visualize their progress and set new goals for improvement.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_kqQtke": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "GEARS&DEVICES OPTIMIAZTION",
+            "icon": "none",
+            "row_content": "<p>We can help traditional sports company to upgrade the equipment and empower with our leading algorithms and systems. Various sensors can be further embedded in equipment upon requests, which can capture detailed biomechanical data, such as force, balance, and movement patterns. A full level of upgrading support can be provided, from the customized PCB to software functional designs.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_WRiMnL": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "MODERNIZATION OF SPORTS VENUES",
+            "icon": "none",
+            "row_content": "<p>AI-powered surveillance can improve security by detecting unusual activities and potential threats in real-time, ensuring a safe environment for all attendees. Nevertheless, we design tehcnology integration plans for data collecting and analyzing in real-time, providing insights into fan behavior, preferences, and venue usage, allowing for better planning and improvements. Also, large digital displays can be equipped with AI to provide interactive content, polls, and social media integration, engaging spectators in real-time.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_jdBDbU",
+        "collapsible_row_NGjbfG",
+        "collapsible_row_kqQtke",
+        "collapsible_row_WRiMnL"
+      ],
+      "settings": {
+        "caption": "MOTION RIVALRY",
+        "heading": "INDUSTRY LEADING AI TECHNOLOGY",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "layout": "row",
+        "color_scheme": "",
+        "container_color_scheme": "scheme-1",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_banner_Kzwr8M": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify://shop_images/3.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "rich_text_UWp3DK": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_kpXCeh": {
+          "type": "heading",
+          "settings": {
+            "heading": "Experience the future of sports tech",
+            "heading_size": "h1"
+          }
+        },
+        "text_Qwj8fk": {
+          "type": "text",
+          "settings": {
+            "text": "<h4>We’re looking for creative minds from a wide range of backgrounds and we invite you to join us on this remarkable journey as we continue to redefine the sports landscape with our AI-driven solutions. </h4><h4>Together, we can unlock new potentials, break new grounds, and elevate the sports experience for all. </h4>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_kpXCeh",
+        "text_Qwj8fk"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-4",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_banner_xrD4zk",
+    "collapsible_content_FBKRM6",
+    "image_banner_Kzwr8M",
+    "rich_text_UWp3DK"
+  ]
+}

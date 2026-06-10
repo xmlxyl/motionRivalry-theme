@@ -1,0 +1,43 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "pf-9b338341": {
+      "type": "pf-9b338341",
+      "settings": {
+        "pf_b7d44397_value": "<span style=\"color: rgb(255, 255, 255);\"><span style=\"color: rgb(238, 238, 238);\">Combining expertise in AI, biomechanics, and smart hardware, Motion Rivalry team drives innovation in athletic performance and sports technology. Integrated motion sensors, wearables, and advanced analytics enable personalized training, optimized equipment, and data-driven insights for athletes and sports venues. The focus on precision, performance enhancement, and real-time analysis supports improved outcomes, safety, and engagement across all levels of sport.</span></span>",
+        "pf_1c588b0f_value": "<span style=\"color: rgb(255, 255, 255);\"><span style=\"color: rgb(238, 238, 238);\">Combining expertise in AI, biomechanics, and smart hardware, Motion Rivalry team drives innovation in athletic performance and sports technology. Integrated motion sensors, wearables, and advanced analytics enable personalized training, optimized equipment, and data-driven insights for athletes and sports venues. The focus on precision, performance enhancement, and real-time analysis supports improved outcomes, safety, and engagement across all levels of sport.</span></span>",
+        "pf_820e7a8f_value": "<span style=\"color: rgb(153, 153, 153);\"><span style=\"color: rgb(238, 238, 238);\">As a trusted partner to Olympic athletes and professional teams with delivering cutting-edge performance analytics.</span></span>",
+        "pf_be5df35f_value": "<span style=\"color: rgb(255, 255, 255);\">*Super Early Bird Price from $359.<br>*Professional Performance, Multi-Sport Flexibility.</span>",
+        "pf_1015b99d_value": "<span style=\"color: rgb(255, 255, 255);\">*Super Early Bird Price from $359.<br>*Professional Performance, Multi-Sport Flexibility.</span>",
+        "pf_ae007179_value": "<span style=\"color: rgb(255, 255, 255);\">Enter your email below to<br>get&nbsp;REACH updates</span>",
+        "pf_ad0c033c_value": "<span style=\"color: rgb(255, 255, 255);\">Enter your email below to get&nbsp;REACH updates</span>",
+        "pf_465de991_value": "<span style=\"color: rgb(255, 255, 255);\">Reserve $5 to lock in Super Early Bird</span>",
+        "pf_aea71591_value": "<span style=\"color: rgb(255, 255, 255);\">Reserve $5 to lock in Super Early Bird</span>",
+        "pf_78a673d3_value": "<span style=\"color: rgb(255, 255, 255);\">Proven in Professional Racing</span>",
+        "pf_457d1bc8_value": "<span style=\"color: rgb(255, 255, 255);\">About Motion Rivalry Team</span>",
+        "pf_e6421c58_value": "<span style=\"color: rgb(255, 255, 255);\">About Motion Rivalry Team</span>",
+        "pf_31bac350_value": "Rowing ｜ Kayaking",
+        "pf_d6330e87_value": "Rowing ｜ Kayaking",
+        "pf_01dce36e_value": "See It in Action",
+        "pf_8691a39e_value": "See It in Action",
+        "pf_4b6be6ef_value": "See It in Action",
+        "pf_c350d699_value": "Paragliding",
+        "pf_0e87b83a_value": "Paragliding",
+        "pf_2d0431ba_value": "Cycling",
+        "pf_be24d633_value": "Cycling"
+      }
+    }
+  },
+  "order": [
+    "pf-9b338341"
+  ],
+  "layout": "theme.pagefly"
+}
