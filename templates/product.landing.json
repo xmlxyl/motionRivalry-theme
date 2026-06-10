@@ -89,28 +89,32 @@
         "tab_1": {
           "type": "tab",
           "settings": {
-            "label": "How it Works",
+            "label": "Trusted by Athletes",
+            "icon": "athlete",
             "target_id": "delivery"
           }
         },
         "tab_2": {
           "type": "tab",
           "settings": {
-            "label": "Save Deals",
+            "label": "Built for Serious Training",
+            "icon": "training",
             "target_id": "save-deals"
           }
         },
         "tab_3": {
           "type": "tab",
           "settings": {
-            "label": "Order Journey",
+            "label": "Designed for Portability",
+            "icon": "portability",
             "target_id": "order-journey"
           }
         },
         "tab_4": {
           "type": "tab",
           "settings": {
-            "label": "FAQ",
+            "label": "Backed by Innovation",
+            "icon": "innovation",
             "target_id": "faq"
           }
         }
@@ -122,9 +126,10 @@
         "tab_4"
       ],
       "settings": {
+        "background_color": "#0a0b0d",
         "sticky": true,
-        "padding_top": 0,
-        "padding_bottom": 0
+        "padding_top": 16,
+        "padding_bottom": 16
       }
     },
     "delivery": {
@@ -174,19 +179,19 @@
         "benefit_1": {
           "type": "benefit",
           "settings": {
-            "text": "Lock in the lowest price before launch"
+            "text": "Pre-order at Kickstarter launch"
           }
         },
         "benefit_2": {
           "type": "benefit",
           "settings": {
-            "text": "Get your deposit refunded after campaign ends"
+            "text": "Deposit paid = 100% refundable"
           }
         },
         "benefit_3": {
           "type": "benefit",
           "settings": {
-            "text": "Exclusive early backer perks included"
+            "text": "Partial refund issued after Kickstarter concludes"
           }
         }
       },
@@ -196,8 +201,8 @@
         "benefit_3"
       ],
       "settings": {
-        "eyebrow": "Reserve Early, Save Big",
-        "heading": "Pay a $50 Deposit Now Save up to $2100",
+        "eyebrow": "Reserve Early, Save Big.",
+        "heading": "Pay a $50 Deposit Now\nSave up to $2100",
         "deposit_label": "DEPOSIT",
         "deposit_value": "$50",
         "save_label": "YOU SAVE UP TO",

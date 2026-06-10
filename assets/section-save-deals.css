@@ -1,5 +1,8 @@
-.save-deals {
+.save-deals__card {
   background: var(--landing-bg-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 2rem;
+  padding: clamp(2.8rem, 4vw, 5.6rem);
 }
 
 .save-deals__grid {
@@ -12,12 +15,21 @@
 @media screen and (min-width: 990px) {
   .save-deals__grid {
     grid-template-columns: 1fr 1fr;
-    gap: 6rem;
+    gap: 4.8rem;
   }
 }
 
 .save-deals__heading {
-  font-size: clamp(2.4rem, 3vw, 3.6rem);
+  font-size: clamp(2.8rem, 3.5vw, 4.8rem);
+  text-transform: none;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  max-width: 52rem;
+}
+
+.save-deals__content .landing-page__check-list li {
+  color: var(--landing-text-heading);
+  font-size: 1.5rem;
 }
 
 .save-deals__graphic {
@@ -25,44 +37,46 @@
   justify-content: center;
 }
 
-.save-deals__box {
+.save-deals__equation {
   display: flex;
-  align-items: stretch;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
   width: 100%;
   max-width: 48rem;
-  border-radius: 1.2rem;
-  overflow: hidden;
-  min-height: 14rem;
 }
 
-.save-deals__box-half {
-  flex: 1;
+.save-deals__box {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2.4rem 1.6rem;
   text-align: center;
+  padding: 2.4rem 2rem;
+  border-radius: 1.2rem;
+  min-height: 13rem;
 }
 
-.save-deals__box-half--deposit {
+.save-deals__box--deposit {
+  flex: 0 0 auto;
+  min-width: 13rem;
   background: var(--landing-bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.save-deals__box-half--save {
+.save-deals__box--save {
+  flex: 1 1 auto;
+  min-width: 16rem;
+  max-width: 28rem;
   background: var(--landing-accent-primary);
 }
 
 .save-deals__equals {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 4rem;
-  background: var(--landing-bg-primary);
-  color: var(--landing-text-heading);
-  font-size: 2.4rem;
-  font-weight: 300;
   flex-shrink: 0;
+  color: var(--landing-text-heading);
+  font-size: 3.2rem;
+  font-weight: 300;
+  line-height: 1;
 }
 
 .save-deals__box-label {
@@ -71,20 +85,37 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 0.8rem;
-}
-
-.save-deals__box-half--deposit .save-deals__box-label,
-.save-deals__box-half--deposit .save-deals__box-value {
-  color: var(--landing-text-body);
-}
-
-.save-deals__box-half--save .save-deals__box-label,
-.save-deals__box-half--save .save-deals__box-value {
   color: var(--landing-text-heading);
 }
 
 .save-deals__box-value {
-  font-size: clamp(2.4rem, 4vw, 3.6rem);
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1;
+  color: var(--landing-text-heading);
+}
+
+.save-deals__box-value--deposit {
+  font-size: clamp(3.6rem, 5vw, 5.6rem);
+}
+
+.save-deals__box-value--save {
+  font-size: clamp(4.4rem, 6vw, 7.2rem);
+}
+
+@media screen and (max-width: 749px) {
+  .save-deals__equation {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .save-deals__box--deposit,
+  .save-deals__box--save {
+    width: 100%;
+    max-width: 28rem;
+    min-width: 0;
+  }
+
+  .save-deals__equals {
+    font-size: 2.4rem;
+  }
 }

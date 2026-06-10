@@ -41,18 +41,20 @@
           {%- if block.settings.text != blank -%}
             <p class="delivery__step-text">{{ block.settings.text }}</p>
           {%- endif -%}
-          <div class="landing-page__icon-circle">
-            {%- case block.settings.icon -%}
-              {%- when 'card' -%}
-                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2" stroke-width="1.5"/><path d="M2 10h20" stroke-width="1.5"/></svg>
-              {%- when 'tag' -%}
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z" stroke-width="1.5"/><circle cx="7" cy="7" r="1.5" fill="currentColor" stroke="none"/></svg>
-              {%- when 'dollar' -%}
-                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke-width="1.5"/><path d="M12 7v10M9 9.5c0-1 1.5-1.5 3-1.5s3 .5 3 1.5-1.5 1.5-3 2-3 1-3 2 1.5 1.5 3 1.5 3-1.5" stroke-width="1.5"/></svg>
-              {%- else -%}
-                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke-width="1.5"/></svg>
-            {%- endcase -%}
-          </div>
+          {%- if block.settings.image != blank -%}
+            <div class="delivery__step-icon">
+              {{
+                block.settings.image
+                | image_url: width: 200
+                | image_tag:
+                  widths: '96, 144, 200',
+                  sizes: '4.8rem',
+                  alt: '',
+                  class: 'delivery__step-icon__image',
+                  loading: 'lazy'
+              }}
+            </div>
+          {%- endif -%}
         </div>
       {%- endfor -%}
     </div>
@@ -85,15 +87,9 @@
           "default": "Secure your spot with a small refundable deposit."
         },
         {
-          "type": "select",
-          "id": "icon",
-          "label": "Icon",
-          "options": [
-            { "value": "card", "label": "Credit card" },
-            { "value": "tag", "label": "Price tag" },
-            { "value": "dollar", "label": "Dollar sign" }
-          ],
-          "default": "card"
+          "type": "image_picker",
+          "id": "image",
+          "label": "Icon image"
         }
       ]
     }
@@ -146,24 +142,21 @@
           "type": "step",
           "settings": {
             "title": "Pay $50 Deposit Now",
-            "text": "Secure your spot with a small refundable deposit on our store.",
-            "icon": "card"
+            "text": "Reserve your eligibility for additional savings with a $50 refundable deposit."
           }
         },
         {
           "type": "step",
           "settings": {
-            "title": "Back on Kickstarter",
-            "text": "When the campaign launches, complete your pledge to lock in early-bird pricing.",
-            "icon": "tag"
+            "title": "Enjoy Exclusive Pricing on Kickstarter",
+            "text": "Secure your LUMISTAR CARRY through the Kickstarter campaign by using the same email address you used for your deposit. Limited offers available on early, first-come, first-served basis."
           }
         },
         {
           "type": "step",
           "settings": {
-            "title": "Get Cashback After Campaign",
-            "text": "Receive your deposit back plus exclusive savings when the campaign ends.",
-            "icon": "dollar"
+            "title": "Get Cash Back After Campaign Ends",
+            "text": "Upon the conclusion of the campaign and following the Kickstarter charge, you will receive cashback covering both your deposit and the bonus price difference."
           }
         }
       ]

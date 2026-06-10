@@ -19,37 +19,39 @@
 
 <div class="save-deals landing-page section-{{ section.id }}-padding" id="save-deals">
   <div class="page-width">
-    <div class="save-deals__grid">
-      <div class="save-deals__content">
-        {%- if section.settings.eyebrow != blank -%}
-          <p class="landing-page__eyebrow">{{ section.settings.eyebrow }}</p>
-        {%- endif -%}
-        {%- if section.settings.heading != blank -%}
-          <h2 class="landing-page__heading save-deals__heading">{{ section.settings.heading }}</h2>
-        {%- endif -%}
+    <div class="save-deals__card">
+      <div class="save-deals__grid">
+        <div class="save-deals__content">
+          {%- if section.settings.eyebrow != blank -%}
+            <p class="landing-page__eyebrow">{{ section.settings.eyebrow }}</p>
+          {%- endif -%}
+          {%- if section.settings.heading != blank -%}
+            <h2 class="landing-page__heading save-deals__heading">{{ section.settings.heading | newline_to_br }}</h2>
+          {%- endif -%}
 
-        <ul class="landing-page__check-list">
-          {%- for block in section.blocks -%}
-            <li {{ block.shopify_attributes }}>
-              <span class="landing-page__check-icon">
-                <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.5" fill="none"/></svg>
-              </span>
-              {{ block.settings.text }}
-            </li>
-          {%- endfor -%}
-        </ul>
-      </div>
+          <ul class="landing-page__check-list">
+            {%- for block in section.blocks -%}
+              <li {{ block.shopify_attributes }}>
+                <span class="landing-page__check-icon">
+                  <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.5" fill="none"/></svg>
+                </span>
+                {{ block.settings.text }}
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
 
-      <div class="save-deals__graphic">
-        <div class="save-deals__box">
-          <div class="save-deals__box-half save-deals__box-half--deposit">
-            <span class="save-deals__box-label">{{ section.settings.deposit_label }}</span>
-            <span class="save-deals__box-value">{{ section.settings.deposit_value }}</span>
-          </div>
-          <div class="save-deals__equals">=</div>
-          <div class="save-deals__box-half save-deals__box-half--save">
-            <span class="save-deals__box-label">{{ section.settings.save_label }}</span>
-            <span class="save-deals__box-value">{{ section.settings.save_value }}</span>
+        <div class="save-deals__graphic">
+          <div class="save-deals__equation">
+            <div class="save-deals__box save-deals__box--deposit">
+              <span class="save-deals__box-label">{{ section.settings.deposit_label }}</span>
+              <span class="save-deals__box-value save-deals__box-value--deposit">{{ section.settings.deposit_value }}</span>
+            </div>
+            <div class="save-deals__equals" aria-hidden="true">=</div>
+            <div class="save-deals__box save-deals__box--save">
+              <span class="save-deals__box-label">{{ section.settings.save_label }}</span>
+              <span class="save-deals__box-value save-deals__box-value--save">{{ section.settings.save_value }}</span>
+            </div>
           </div>
         </div>
       </div>
@@ -74,7 +76,7 @@
           "type": "text",
           "id": "text",
           "label": "Text",
-          "default": "Lock in the lowest price before launch"
+          "default": "Pre-order at Kickstarter launch"
         }
       ]
     }
@@ -84,13 +86,13 @@
       "type": "text",
       "id": "eyebrow",
       "label": "Eyebrow",
-      "default": "Reserve Early, Save Big"
+      "default": "Reserve Early, Save Big."
     },
     {
-      "type": "text",
+      "type": "textarea",
       "id": "heading",
       "label": "Heading",
-      "default": "Pay a $50 Deposit Now Save up to $2100"
+      "default": "Pay a $50 Deposit Now\nSave up to $2100"
     },
     {
       "type": "header",
@@ -145,9 +147,9 @@
     {
       "name": "Save Deals",
       "blocks": [
-        { "type": "benefit", "settings": { "text": "Lock in the lowest price before launch" } },
-        { "type": "benefit", "settings": { "text": "Get your deposit refunded after campaign ends" } },
-        { "type": "benefit", "settings": { "text": "Exclusive early backer perks included" } }
+        { "type": "benefit", "settings": { "text": "Pre-order at Kickstarter launch" } },
+        { "type": "benefit", "settings": { "text": "Deposit paid = 100% refundable" } },
+        { "type": "benefit", "settings": { "text": "Partial refund issued after Kickstarter concludes" } }
       ]
     }
   ]
