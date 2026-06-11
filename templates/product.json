@@ -29,65 +29,24 @@
           "settings": {
             "label": "Elite Level Training"
           }
-        },
-        "benefit_1": {
-          "type": "benefit",
-          "settings": {
-            "title": "Get early access, save big",
-            "subtitle": "Pay a $50 deposit for first access to exclusive Kickstarter pricing and up to $2100 in savings."
-          }
-        },
-        "benefit_2": {
-          "type": "benefit",
-          "settings": {
-            "title": "Get cash back when campaign ends",
-            "subtitle": "Receive cashback once our Kickstarter campaign concludes—applied to your Kickstarter pledge."
-          }
-        },
-        "benefit_3": {
-          "type": "benefit",
-          "settings": {
-            "title": "Unlock early backer perks",
-            "subtitle": "Gain priority shipping, insider updates, and access to our early-access community."
-          }
-        },
-        "benefit_4": {
-          "type": "benefit",
-          "settings": {
-            "title": "No risk, no commitment",
-            "subtitle": "Cancel anytime. Your $50 is safe."
-          }
-        },
-        "benefit_5": {
-          "type": "benefit",
-          "settings": {
-            "title": "Not a full purchase",
-            "subtitle": "This is a reservation, not a product order. No physical item will be shipped from this page."
-          }
         }
       },
       "block_order": [
         "feature_1",
         "feature_2",
-        "feature_3",
-        "benefit_1",
-        "benefit_2",
-        "benefit_3",
-        "benefit_4",
-        "benefit_5"
+        "feature_3"
       ],
       "settings": {
         "overlay_opacity": 55,
-        "eyebrow": "Train Smarter. Shoot More. Get Better.",
-        "custom_title": "LUMISTAR CARRY BASKETBALL TRAINER",
-        "subtitle": "Reserve Yours Today",
+        "eyebrow": "Reserve Yours Today",
+        "custom_title": "",
+        "subtitle": "",
         "card_badge": "Add to Cart",
         "card_title": "Reserve with a Deposit",
-        "deposit_amount": "$xx",
-        "savings_text": "SAVE UP TO $xx",
-        "button_label": "Pay $xx Deposit",
+        "deposit_amount": "$50",
+        "savings_text": "SAVE UP TO $2100",
+        "button_label": "Pay $50 Deposit",
         "show_dynamic_checkout": true,
-        "payment_link_label": "More payment options",
         "padding_top": 0,
         "padding_bottom": 36
       }
@@ -98,29 +57,25 @@
         "tab_1": {
           "type": "tab",
           "settings": {
-            "label": "How it Works",
-            "target_id": "delivery"
+            "label": "How it Works"
           }
         },
         "tab_2": {
           "type": "tab",
           "settings": {
-            "label": "Save Deals",
-            "target_id": "save-deals"
+            "label": "Save Deals"
           }
         },
         "tab_3": {
           "type": "tab",
           "settings": {
-            "label": "Order Journey",
-            "target_id": "order-journey"
+            "label": "Order Journey"
           }
         },
         "tab_4": {
           "type": "tab",
           "settings": {
-            "label": "FAQ",
-            "target_id": "faq"
+            "label": "FAQ"
           }
         }
       },
@@ -131,7 +86,6 @@
         "tab_4"
       ],
       "settings": {
-        "sticky": true,
         "padding_top": 0,
         "padding_bottom": 0
       }
@@ -143,24 +97,21 @@
           "type": "step",
           "settings": {
             "title": "Pay $50 Deposit Now",
-            "text": "Secure your spot with a small refundable deposit on our store.",
-            "icon": "card"
+            "text": "Secure your spot with a small refundable deposit on our store."
           }
         },
         "step_2": {
           "type": "step",
           "settings": {
             "title": "Back on Kickstarter",
-            "text": "When the campaign launches, complete your pledge to lock in early-bird pricing.",
-            "icon": "tag"
+            "text": "When the campaign launches, complete your pledge to lock in early-bird pricing."
           }
         },
         "step_3": {
           "type": "step",
           "settings": {
             "title": "Get Cashback After Campaign",
-            "text": "Receive your deposit back plus exclusive savings when the campaign ends.",
-            "icon": "dollar"
+            "text": "Receive your deposit back plus exclusive savings when the campaign ends."
           }
         }
       },
@@ -349,7 +300,6 @@
     },
     "main": {
       "type": "main-product",
-      "disabled": true,
       "blocks": {
         "vendor": {
           "type": "text",
@@ -405,6 +355,7 @@
         "description",
         "share"
       ],
+      "disabled": true,
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-4",

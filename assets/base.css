@@ -2886,6 +2886,175 @@ details-disclosure > details {
   position: relative;
 }
 
+/* Header VI style */
+.header-wrapper--vi {
+  --header-vi-bg: #000000;
+  --header-vi-text: #ffffff;
+  --header-vi-accent: var(--landing-accent-primary, #ff3131);
+  background: var(--header-vi-bg) !important;
+}
+
+.header-wrapper--vi.shopify-section-header-sticky,
+.header-wrapper--vi .shopify-section-header-sticky {
+  background: var(--header-vi-bg) !important;
+}
+
+.header-wrapper--vi.header-wrapper--border-bottom {
+  border-bottom: none;
+}
+
+.header-wrapper--vi .header {
+  background-color: var(--header-vi-bg);
+}
+
+.header-wrapper--vi .header__heading-link .h2 {
+  color: var(--header-vi-text);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: clamp(1.6rem, 2vw, 2.2rem);
+}
+
+.header-wrapper--vi .header__heading-link:hover .h2 {
+  color: var(--header-vi-text);
+}
+
+@media screen and (min-width: 990px) {
+  .header-wrapper--vi .header--middle-left {
+    grid-template-columns: auto 1fr auto;
+    column-gap: 3.2rem;
+  }
+
+  .header-wrapper--vi .header__inline-menu {
+    justify-self: center;
+    margin-left: 0;
+  }
+
+  .header-wrapper--vi .list-menu--inline {
+    gap: 0.4rem;
+  }
+
+  .header-wrapper--vi .header__menu-item {
+    padding: 1rem 1.4rem;
+    color: var(--header-vi-text);
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .header-wrapper--vi .header__menu-item:hover {
+    color: var(--header-vi-text);
+  }
+
+  .header-wrapper--vi .header__menu-item span {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.6rem;
+    text-decoration: none !important;
+    transition: color 0.2s ease;
+  }
+
+  .header-wrapper--vi .header__menu-item span::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: var(--header-vi-accent);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.25s ease;
+  }
+
+  .header-wrapper--vi .header__menu-item:hover span::after,
+  .header-wrapper--vi .header__active-menu-item::after,
+  .header-wrapper--vi details[open] > .header__menu-item span::after {
+    transform: scaleX(1);
+  }
+
+  .header-wrapper--vi .header__active-menu-item {
+    color: var(--header-vi-text);
+    text-decoration: none !important;
+  }
+
+  .header-wrapper--vi .header__menu-item:hover span,
+  .header-wrapper--vi .header__menu-item:hover .header__active-menu-item {
+    text-decoration: none !important;
+    text-decoration-thickness: unset;
+  }
+
+  .header-wrapper--vi details[open] > .header__menu-item {
+    text-decoration: none;
+  }
+
+  .header-wrapper--vi .header__menu-item .icon-caret {
+    opacity: 0.7;
+    margin-left: 0.4rem;
+  }
+
+  .header-wrapper--vi .header__icon--account {
+    display: none;
+  }
+}
+
+.header-wrapper--vi .header__icons {
+  gap: 0.4rem;
+}
+
+.header-wrapper--vi .header__icon,
+.header-wrapper--vi .header__icon .icon,
+.header-wrapper--vi .header__icon .svg-wrapper {
+  color: var(--header-vi-text);
+}
+
+.header-wrapper--vi .header__icon:hover .icon,
+.header-wrapper--vi .header__icon:hover {
+  color: var(--header-vi-text);
+  opacity: 0.85;
+}
+
+.header-wrapper--vi .cart-count-bubble {
+  background-color: var(--header-vi-accent);
+  color: var(--header-vi-text);
+  font-weight: 700;
+  font-size: 1rem;
+  min-width: 1.8rem;
+  height: 1.8rem;
+  bottom: 0.6rem;
+  left: 2rem;
+}
+
+.header-wrapper--vi .menu-drawer {
+  background-color: var(--header-vi-bg);
+}
+
+.header-wrapper--vi .menu-drawer__navigation {
+  padding: 2rem;
+}
+
+.header-wrapper--vi .menu-drawer__menu-item {
+  color: var(--header-vi-text);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.header-wrapper--vi .menu-drawer__menu-item--active,
+.header-wrapper--vi .menu-drawer__menu-item:focus,
+.header-wrapper--vi .menu-drawer__menu-item:hover {
+  color: var(--header-vi-accent);
+}
+
+.header-wrapper--vi .menu-drawer__close-button {
+  color: var(--header-vi-text);
+}
+
+.header-wrapper--vi .header__icon--menu .icon {
+  color: var(--header-vi-text);
+}
+
 @keyframes animateMenuOpen {
   0% {
     opacity: 0;

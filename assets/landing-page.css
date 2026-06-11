@@ -1,6 +1,9 @@
 /* Shared landing page styles */
-.landing-page {
+.landing-page,
+.landing-page.gradient {
   background-color: var(--landing-bg-primary);
+  background-image: none;
+  background-attachment: scroll;
   color: var(--landing-text-body);
 }
 
@@ -14,7 +17,7 @@
 }
 
 .landing-page__heading {
-  color: var(--landing-text-heading);
+  color: var(--landing-accent-label);
   font-size: clamp(2.4rem, 4vw, 4.8rem);
   font-weight: 700;
   line-height: 1.1;
@@ -23,7 +26,7 @@
 }
 
 .landing-page__subheading {
-  color: var(--landing-text-body);
+  color: var(--landing-text-subtitle);
   font-size: 1.6rem;
   line-height: 1.5;
   margin: 0 0 2.4rem;
@@ -51,6 +54,7 @@
   height: 2rem;
   border-radius: 50%;
   background: var(--landing-accent-primary);
+  color: var(--landing-accent-label);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -60,7 +64,6 @@
 .landing-page__check-icon svg {
   width: 1rem;
   height: 1rem;
-  fill: var(--landing-text-heading);
 }
 
 .landing-page__btn-primary {
@@ -71,7 +74,7 @@
   width: 100%;
   padding: 1.6rem 2.4rem;
   background: var(--landing-accent-primary);
-  color: var(--landing-text-heading);
+  color: var(--landing-accent-label);
   border: none;
   border-radius: 0.4rem;
   font-size: 1.4rem;
@@ -84,14 +87,14 @@
 }
 
 .landing-page__btn-primary:hover {
-  opacity: 0.9;
+  background: color-mix(in srgb, var(--landing-accent-primary) 88%, #000000);
 }
 
 .landing-page__badge {
   display: inline-block;
   padding: 0.4rem 1.2rem;
   background: var(--landing-accent-primary);
-  color: var(--landing-text-heading);
+  color: var(--landing-accent-label);
   border-radius: 2rem;
   font-size: 1.1rem;
   font-weight: 700;
@@ -111,7 +114,7 @@
   height: 4.8rem;
   border-radius: 50%;
   background: var(--landing-accent-primary);
-  color: var(--landing-text-heading);
+  color: var(--landing-accent-label);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -124,7 +127,7 @@
   width: 8rem;
   height: 8rem;
   border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid var(--landing-border);
   display: flex;
   align-items: center;
   justify-content: center;

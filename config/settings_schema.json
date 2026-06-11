@@ -78,6 +78,12 @@
           },
           {
             "type": "color",
+            "id": "subtitle",
+            "label": "t:settings_schema.colors.settings.subtitle.label",
+            "default": "#5e5e5e"
+          },
+          {
+            "type": "color",
             "id": "shadow",
             "label": "t:settings_schema.colors.settings.shadow.label",
             "default": "#121212"
@@ -1483,13 +1489,13 @@
         "type": "color",
         "id": "landing_bg_secondary",
         "label": "Secondary background",
-        "default": "#121212"
+        "default": "#262626"
       },
       {
         "type": "color",
         "id": "landing_bg_card",
         "label": "Card background",
-        "default": "#1A1A1A"
+        "default": "#2D2D2D"
       },
       {
         "type": "header",
@@ -1498,14 +1504,14 @@
       {
         "type": "color",
         "id": "landing_accent_primary",
-        "label": "Primary accent (orange)",
-        "default": "#FF5722"
+        "label": "Primary accent (red)",
+        "default": "#FF3131"
       },
       {
         "type": "color",
         "id": "landing_accent_secondary",
-        "label": "Secondary accent (Shop Pay)",
-        "default": "#5A31F4"
+        "label": "Secondary accent (lavender)",
+        "default": "#C8B6E8"
       },
       {
         "type": "header",
@@ -1521,13 +1527,13 @@
         "type": "color",
         "id": "landing_text_body",
         "label": "Body text",
-        "default": "#B0B0B0"
+        "default": "#BDC3C7"
       },
       {
         "type": "color",
         "id": "landing_text_muted",
         "label": "Muted text",
-        "default": "#888888"
+        "default": "#8E99A4"
       }
     ]
   }

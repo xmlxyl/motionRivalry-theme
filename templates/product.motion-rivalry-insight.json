@@ -15,24 +15,28 @@
         "feature_1": {
           "type": "feature",
           "settings": {
+            "icon": "shopify://shop_images/speed_unable_13b1a8fd-c221-426c-a0db-43eb8c825a99.png",
             "label": "Portable & Foldable"
           }
         },
         "feature_2": {
           "type": "feature",
           "settings": {
+            "icon": "shopify://shop_images/intercom_unable_ac642e5b-ddce-4379-be64-e2ab1c2bd44e.png",
             "label": "App Controlled"
           }
         },
         "feature_3": {
           "type": "feature",
           "settings": {
+            "icon": "shopify://shop_images/camera_unable.png",
             "label": "Elite Level Training"
           }
         },
         "benefit_1": {
           "type": "benefit",
           "settings": {
+            "icon": "shopify://shop_images/logo_eed172ca-456c-432f-a2f3-26b9d29de11d.png",
             "title": "Get early access, save big",
             "subtitle": "Pay a $50 deposit for first access to exclusive Kickstarter pricing and up to $2100 in savings."
           }
@@ -40,6 +44,7 @@
         "benefit_2": {
           "type": "benefit",
           "settings": {
+            "icon": "shopify://shop_images/logo_eed172ca-456c-432f-a2f3-26b9d29de11d.png",
             "title": "Get cash back when campaign ends",
             "subtitle": "Receive cashback once our Kickstarter campaign concludes—applied to your Kickstarter pledge."
           }
@@ -47,6 +52,7 @@
         "benefit_3": {
           "type": "benefit",
           "settings": {
+            "icon": "shopify://shop_images/logo_eed172ca-456c-432f-a2f3-26b9d29de11d.png",
             "title": "Unlock early backer perks",
             "subtitle": "Gain priority shipping, insider updates, and access to our early-access community."
           }
@@ -54,6 +60,7 @@
         "benefit_4": {
           "type": "benefit",
           "settings": {
+            "icon": "shopify://shop_images/logo_eed172ca-456c-432f-a2f3-26b9d29de11d.png",
             "title": "No risk, no commitment",
             "subtitle": "Cancel anytime. Your $50 is safe."
           }
@@ -61,6 +68,7 @@
         "benefit_5": {
           "type": "benefit",
           "settings": {
+            "icon": "shopify://shop_images/logo_eed172ca-456c-432f-a2f3-26b9d29de11d.png",
             "title": "Not a full purchase",
             "subtitle": "This is a reservation, not a product order. No physical item will be shipped from this page."
           }
@@ -78,15 +86,16 @@
       ],
       "settings": {
         "color_scheme": "scheme-landing",
+        "background_image": "shopify://shop_images/CTA_4e6ffce0-cd6c-4383-b4e8-326bc01c5faf.png",
         "overlay_opacity": 55,
         "eyebrow": "Train Smarter. Shoot More. Get Better.",
-        "custom_title": "LUMISTAR CARRY BASKETBALL TRAINER",
+        "custom_title": "motion rivalry insight stroke gauge",
         "subtitle": "Reserve Yours Today",
         "card_badge": "Add to Cart",
         "card_title": "Reserve with a Deposit",
-        "deposit_amount": "$50",
-        "savings_text": "SAVE UP TO $2100",
-        "button_label": "Pay $50 Deposit",
+        "deposit_amount": "$xx",
+        "savings_text": "SAVE UP TO $xx",
+        "button_label": "",
         "show_dynamic_checkout": true,
         "padding_top": 0,
         "padding_bottom": 36
@@ -132,8 +141,8 @@
       ],
       "settings": {
         "color_scheme": "scheme-landing",
-        "padding_top": 16,
-        "padding_bottom": 16
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "delivery": {
@@ -143,21 +152,24 @@
           "type": "step",
           "settings": {
             "title": "Pay $50 Deposit Now",
-            "text": "Secure your spot with a small refundable deposit on our store."
+            "text": "Secure your spot with a small refundable deposit on our store.",
+            "image": "shopify://shop_images/speed_unable_13b1a8fd-c221-426c-a0db-43eb8c825a99.png"
           }
         },
         "step_2": {
           "type": "step",
           "settings": {
             "title": "Back on Kickstarter",
-            "text": "When the campaign launches, complete your pledge to lock in early-bird pricing."
+            "text": "When the campaign launches, complete your pledge to lock in early-bird pricing.",
+            "image": "shopify://shop_images/speed_unable_13b1a8fd-c221-426c-a0db-43eb8c825a99.png"
           }
         },
         "step_3": {
           "type": "step",
           "settings": {
             "title": "Get Cashback After Campaign",
-            "text": "Receive your deposit back plus exclusive savings when the campaign ends."
+            "text": "Receive your deposit back plus exclusive savings when the campaign ends.",
+            "image": "shopify://shop_images/camera_unable_a4500d95-a135-4eba-ba13-00ddef5425d3.png"
           }
         }
       },
@@ -172,7 +184,7 @@
         "heading": "From deposit to delivery",
         "subheading": "Reserve now, back on Kickstarter, get cashback after campaign ends.",
         "padding_top": 60,
-        "padding_bottom": 60
+        "padding_bottom": 25
       }
     },
     "save_deals": {
@@ -181,19 +193,19 @@
         "benefit_1": {
           "type": "benefit",
           "settings": {
-            "text": "Pre-order at Kickstarter launch"
+            "text": "Lock in the lowest price before launch"
           }
         },
         "benefit_2": {
           "type": "benefit",
           "settings": {
-            "text": "Deposit paid = 100% refundable"
+            "text": "Get your deposit refunded after campaign ends"
           }
         },
         "benefit_3": {
           "type": "benefit",
           "settings": {
-            "text": "Partial refund issued after Kickstarter concludes"
+            "text": "Exclusive early backer perks included"
           }
         }
       },
@@ -204,13 +216,13 @@
       ],
       "settings": {
         "color_scheme": "scheme-landing",
-        "eyebrow": "Reserve Early, Save Big.",
-        "heading": "Pay a $50 Deposit Now\nSave up to $2100",
+        "eyebrow": "Reserve Early, Save Big",
+        "heading": "Pay a $50 Deposit Now Save up to $2100",
         "deposit_label": "DEPOSIT",
         "deposit_value": "$50",
         "save_label": "YOU SAVE UP TO",
         "save_value": "$2100",
-        "padding_top": 60,
+        "padding_top": 0,
         "padding_bottom": 60
       }
     },
@@ -231,14 +243,22 @@
           "type": "phase",
           "settings": {
             "title": "Kickstarter Launch",
-            "description": "Complete your pledge on Kickstarter to lock in early-bird pricing."
+            "description": "Complete your pledge on Kickstarter to lock in early-bird pricing.",
+            "steps": "",
+            "image": "shopify://shop_images/router-wave.png",
+            "active": false,
+            "badge": "Active Now"
           }
         },
         "phase_3": {
           "type": "phase",
           "settings": {
             "title": "After Campaign Ends",
-            "description": "Get your deposit refunded and receive your product when ready to ship."
+            "description": "Get your deposit refunded and receive your product when ready to ship.",
+            "steps": "",
+            "image": "shopify://shop_images/speed_unable.png",
+            "active": false,
+            "badge": "Active Now"
           }
         },
         "info_1": {
@@ -347,6 +367,117 @@
         "padding_top": 60,
         "padding_bottom": 60
       }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "description",
+        "share"
+      ],
+      "disabled": true,
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-4",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "image_banner_BaLrxA": {
+      "type": "image-banner",
+      "disabled": true,
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/06_ff6a4156-2a8c-4e0c-8105-e11452a2380e.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
     }
   },
   "order": [
@@ -355,6 +486,9 @@
     "delivery",
     "save_deals",
     "order_journey",
-    "faq"
+    "faq",
+    "main",
+    "related-products",
+    "image_banner_BaLrxA"
   ]
 }

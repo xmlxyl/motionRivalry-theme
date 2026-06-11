@@ -1,7 +1,7 @@
 {{ 'landing-page.css' | asset_url | stylesheet_tag }}
 {{ 'section-save-deals.css' | asset_url | stylesheet_tag }}
 
-{% render 'landing-page-colors' %}
+{% render 'landing-page-colors', section: section %}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -17,9 +17,9 @@
   }
 {%- endstyle -%}
 
-<div class="save-deals landing-page section-{{ section.id }}-padding" id="save-deals">
+<div class="save-deals landing-page color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding" id="save-deals">
   <div class="page-width">
-    <div class="save-deals__card">
+    <div class="save-deals__card" data-aos="fade-up">
       <div class="save-deals__grid">
         <div class="save-deals__content">
           {%- if section.settings.eyebrow != blank -%}
@@ -33,7 +33,7 @@
             {%- for block in section.blocks -%}
               <li {{ block.shopify_attributes }}>
                 <span class="landing-page__check-icon">
-                  <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.5" fill="none"/></svg>
+                  <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
                 </span>
                 {{ block.settings.text }}
               </li>
@@ -83,6 +83,12 @@
   ],
   "settings": [
     {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-landing"
+    },
+    {
       "type": "text",
       "id": "eyebrow",
       "label": "Eyebrow",
@@ -126,8 +132,8 @@
       "type": "range",
       "id": "padding_top",
       "min": 0,
-      "max": 120,
-      "step": 4,
+      "max": 100,
+      "step": 1,
       "unit": "px",
       "label": "Padding top",
       "default": 60
@@ -136,8 +142,8 @@
       "type": "range",
       "id": "padding_bottom",
       "min": 0,
-      "max": 120,
-      "step": 4,
+      "max": 100,
+      "step": 1,
       "unit": "px",
       "label": "Padding bottom",
       "default": 60

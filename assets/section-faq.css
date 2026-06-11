@@ -1,5 +1,6 @@
-.landing-faq {
-  background: var(--landing-bg-secondary);
+.landing-faq.landing-page,
+.landing-faq.landing-page.gradient {
+  background: var(--landing-bg-primary);
 }
 
 .landing-faq__wrapper {
@@ -16,6 +17,7 @@
   margin: 0 0 4rem;
 }
 
+landing-faq-list,
 .landing-faq__list {
   display: flex;
   flex-direction: column;
@@ -23,7 +25,7 @@
 }
 
 .landing-faq__item {
-  background: var(--landing-bg-card);
+  background: var(--landing-bg-surface);
   border-radius: 0.6rem;
   overflow: hidden;
 }
@@ -34,6 +36,7 @@
   justify-content: space-between;
   gap: 2rem;
   padding: 1.8rem 2.4rem;
+  background: var(--landing-bg-surface);
   color: var(--landing-text-heading);
   font-size: 1.5rem;
   font-weight: 600;
@@ -57,34 +60,63 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   width: 1.4rem;
   height: 1.4rem;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.landing-faq__icon-plus {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(0deg);
 }
 
 .landing-faq__icon-minus {
   opacity: 0;
+  transform: translate(-50%, -50%) rotate(-90deg);
 }
 
 .landing-faq__item[open] .landing-faq__icon-plus {
   opacity: 0;
+  transform: translate(-50%, -50%) rotate(90deg);
 }
 
 .landing-faq__item[open] .landing-faq__icon-minus {
   opacity: 1;
+  transform: translate(-50%, -50%) rotate(0deg);
 }
 
 .landing-faq__answer {
+  overflow: hidden;
+  height: 0;
+  transition: height 0.3s ease;
+}
+
+.landing-faq__item[open] .landing-faq__answer {
+  height: auto;
+}
+
+.landing-faq__answer-inner {
   padding: 0 2.4rem 2rem;
   color: var(--landing-text-body);
   font-size: 1.4rem;
   line-height: 1.6;
 }
 
-.landing-faq__answer p {
+.landing-faq__answer-inner p {
   margin: 0;
 }
 
-.landing-faq__answer a {
+.landing-faq__answer-inner a {
   color: var(--landing-accent-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing-faq__answer {
+    transition: none;
+  }
+
+  .landing-faq__icon svg {
+    transition: none;
+  }
 }

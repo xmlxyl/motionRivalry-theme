@@ -6,21 +6,46 @@
   - product_form_id: {String} product form id.
   - section_id: {String} id of section to which this snippet belongs.
   - show_pickup_availability: {Boolean} for the pickup availability. If true the pickup availability is rendered, false - not rendered (optional).
+  - dynamic_checkout: {Boolean} optional override when block is not used.
+  - button_label: {String} optional custom button label when product is available.
+  - button_class: {String} optional custom button class list.
+  - wrapper_class: {String} optional class for the outer wrapper.
 
   Usage:
   {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true %}
 {% endcomment %}
-<div {{ block.shopify_attributes }}>
+<div
+  {% if wrapper_class != blank %}
+    class="{{ wrapper_class }}"
+  {% endif %}
+  {% if block != blank %}
+    {{ block.shopify_attributes }}
+  {% endif %}
+>
   {%- if product != blank -%}
     {%- liquid
       assign gift_card_recipient_feature_active = false
-      if block.settings.show_gift_card_recipient and product.gift_card?
+      if block != blank and block.settings.show_gift_card_recipient and product.gift_card?
         assign gift_card_recipient_feature_active = true
       endif
 
       assign show_dynamic_checkout = false
-      if block.settings.show_dynamic_checkout and gift_card_recipient_feature_active == false
+      if block == blank
+        if dynamic_checkout and gift_card_recipient_feature_active == false
+          assign show_dynamic_checkout = true
+        endif
+      elsif block.settings.show_dynamic_checkout and gift_card_recipient_feature_active == false
         assign show_dynamic_checkout = true
+      endif
+
+      assign submit_button_class = 'product-form__submit button button--full-width'
+      if show_dynamic_checkout
+        assign submit_button_class = submit_button_class | append: ' button--secondary'
+      else
+        assign submit_button_class = submit_button_class | append: ' button--primary'
+      endif
+      if button_class != blank
+        assign submit_button_class = button_class
       endif
     -%}
 
@@ -74,7 +99,7 @@
             id="ProductSubmitButton-{{ section_id }}"
             type="submit"
             name="add"
-            class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+            class="{{ submit_button_class }}"
             {% if product.selected_or_first_available_variant.available == false
               or quantity_rule_soldout
               or product.selected_or_first_available_variant == null
@@ -87,6 +112,8 @@
                 {{ 'products.product.unavailable' | t }}
               {%- elsif product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
                 {{ 'products.product.sold_out' | t }}
+              {%- elsif button_label != blank -%}
+                {{ button_label }}
               {%- else -%}
                 {{ 'products.product.add_to_cart' | t }}
               {%- endif -%}

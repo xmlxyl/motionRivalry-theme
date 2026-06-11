@@ -31,6 +31,9 @@
         "secondary_button_label": {
           "label": "轮廓按钮"
         },
+        "subtitle": {
+          "label": "副标题"
+        },
         "shadow": {
           "label": "阴影"
         }

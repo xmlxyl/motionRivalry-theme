@@ -1,6 +1,10 @@
+.save-deals.landing-page {
+  background: var(--landing-bg-primary);
+}
+
 .save-deals__card {
-  background: var(--landing-bg-secondary);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--landing-bg-surface);
+  border: 1px solid var(--landing-border);
   border-radius: 2rem;
   padding: clamp(2.8rem, 4vw, 5.6rem);
 }
@@ -25,6 +29,7 @@
   letter-spacing: -0.02em;
   line-height: 1.15;
   max-width: 52rem;
+  color: var(--landing-text-heading) !important;
 }
 
 .save-deals__content .landing-page__check-list li {
@@ -61,7 +66,7 @@
   flex: 0 0 auto;
   min-width: 13rem;
   background: var(--landing-bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid color-mix(in srgb, var(--landing-accent-secondary) 35%, var(--landing-border));
 }
 
 .save-deals__box--save {
@@ -69,6 +74,7 @@
   min-width: 16rem;
   max-width: 28rem;
   background: var(--landing-accent-primary);
+  color: var(--landing-accent-label);
 }
 
 .save-deals__equals {
@@ -77,6 +83,11 @@
   font-size: 3.2rem;
   font-weight: 300;
   line-height: 1;
+}
+
+.save-deals__box--save .save-deals__box-label,
+.save-deals__box--save .save-deals__box-value {
+  color: var(--landing-accent-label);
 }
 
 .save-deals__box-label {

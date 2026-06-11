@@ -1,7 +1,7 @@
 {{ 'landing-page.css' | asset_url | stylesheet_tag }}
 {{ 'section-delivery.css' | asset_url | stylesheet_tag }}
 
-{% render 'landing-page-colors' %}
+{% render 'landing-page-colors', section: section %}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -17,9 +17,9 @@
   }
 {%- endstyle -%}
 
-<div class="delivery landing-page section-{{ section.id }}-padding" id="delivery">
+<div class="delivery landing-page color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding" id="delivery">
   <div class="page-width">
-    <div class="delivery__header">
+    <div class="delivery__header" data-aos="fade-up">
       {%- if section.settings.eyebrow != blank -%}
         <p class="landing-page__eyebrow">{{ section.settings.eyebrow }}</p>
       {%- endif -%}
@@ -33,7 +33,7 @@
 
     <div class="delivery__steps">
       {%- for block in section.blocks -%}
-        <div class="delivery__step" {{ block.shopify_attributes }}>
+        <div class="delivery__step" data-aos="fade-up" data-aos-delay="{{ forloop.index0 | times: 150 }}" {{ block.shopify_attributes }}>
           <div class="landing-page__step-number">{{ forloop.index }}</div>
           {%- if block.settings.title != blank -%}
             <h3 class="delivery__step-title">{{ block.settings.title }}</h3>
@@ -96,6 +96,12 @@
   ],
   "settings": [
     {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-landing"
+    },
+    {
       "type": "text",
       "id": "eyebrow",
       "label": "Eyebrow",
@@ -117,8 +123,8 @@
       "type": "range",
       "id": "padding_top",
       "min": 0,
-      "max": 120,
-      "step": 4,
+      "max": 100,
+      "step": 1,
       "unit": "px",
       "label": "Padding top",
       "default": 60
@@ -127,8 +133,8 @@
       "type": "range",
       "id": "padding_bottom",
       "min": 0,
-      "max": 120,
-      "step": 4,
+      "max": 100,
+      "step": 1,
       "unit": "px",
       "label": "Padding bottom",
       "default": 60
