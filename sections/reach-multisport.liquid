@@ -1,0 +1,112 @@
+{{ 'reach-reservation.css' | asset_url | stylesheet_tag }}
+{% render 'reach-fonts' %}
+{% render 'reach-padding', section: section %}
+
+<section class="reach-page reach-page__section reach-page__section--surface section-{{ section.id }}-padding">
+  {% render 'reach-side-tag', text: section.settings.side_tag, side: 'left' %}
+
+  <div class="reach-page__inner reach-multisport" style="padding-top:6rem;padding-bottom:6rem;">
+    <div class="reach-multisport__intro">
+      <p class="reach-page__eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2 class="reach-page__heading">
+        {{ section.settings.heading_before }} <span class="reach-multisport__accent">{{ section.settings.heading_accent }}</span>
+      </h2>
+      <p class="reach-page__text reach-multisport__description">{{ section.settings.description }}</p>
+    </div>
+
+    <div class="reach-multisport__list">
+      {%- for block in section.blocks -%}
+        <article class="reach-sport" {{ block.shopify_attributes }}>
+          <div class="reach-sport__screen">
+            <span class="reach-sport__label">{{ section.settings.screen_label }}</span>
+            {% render 'reach-media', image: block.settings.screen_image, label: block.settings.name | append: ' UI', ratio: 'portrait', contain: true %}
+          </div>
+
+          <div class="reach-sport__action">
+            <span class="reach-sport__label reach-sport__label--light">{{ section.settings.field_label }}</span>
+            {% render 'reach-media', image: block.settings.action_poster, video_url: block.settings.action_video_url, label: block.settings.name | append: ' in the field', ratio: 'landscape' %}
+            <div class="reach-sport__action-fade"></div>
+            {%- if block.settings.tag != blank -%}
+              <p class="reach-sport__tag">{{ block.settings.tag }}</p>
+            {%- endif -%}
+          </div>
+
+          <div class="reach-sport__copy">
+            <div class="reach-sport__meta">
+              <span class="reach-sport__icon">
+                {% render 'reach-sport-icon', icon: block.settings.icon %}
+              </span>
+              <span class="reach-sport__index">0{{ forloop.index }}</span>
+            </div>
+            <h3 class="reach-sport__title">{{ block.settings.name }}</h3>
+            <ul class="reach-sport__list">
+              {%- assign lines = block.settings.lines | newline_to_br | split: '<br />' -%}
+              {%- for line in lines -%}
+                {%- if line != blank -%}
+                  <li class="reach-sport__list-item">
+                    <span class="reach-sport__bullet"></span>
+                    <span>{{ line | strip_html | strip }}</span>
+                  </li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+          </div>
+        </article>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "REACH Multi-sport",
+  "tag": "section",
+  "class": "section-reach-multisport",
+  "blocks": [
+    {
+      "type": "sport",
+      "name": "Sport scenario",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "bike", "label": "Cycling" },
+            { "value": "rowing", "label": "Rowing" },
+            { "value": "skydiving", "label": "Skydiving" }
+          ],
+          "default": "bike"
+        },
+        { "type": "text", "id": "name", "label": "Name", "default": "Cycling" },
+        { "type": "text", "id": "tag", "label": "Tag", "default": "Road · Gravel · MTB" },
+        { "type": "textarea", "id": "lines", "label": "Bullet points (one per line)" },
+        { "type": "image_picker", "id": "screen_image", "label": "Screen image" },
+        { "type": "image_picker", "id": "action_poster", "label": "Action video poster" },
+        { "type": "url", "id": "action_video_url", "label": "Action video URL" }
+      ]
+    }
+  ],
+  "settings": [
+    { "type": "text", "id": "side_tag", "label": "Side tag", "default": "[ A tech company in sports ]" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "[ Dynamic dashboards ]" },
+    { "type": "text", "id": "heading_before", "label": "Heading (before accent)", "default": "One device." },
+    { "type": "text", "id": "heading_accent", "label": "Heading accent", "default": "Every sport." },
+    { "type": "text", "id": "screen_label", "label": "Screen label", "default": "Device UI" },
+    { "type": "text", "id": "field_label", "label": "Field label", "default": "In the field" },
+    { "type": "textarea", "id": "description", "label": "Description", "default": "REACH adapts to your sport with dedicated dashboards, sensor profiles, and accuracy models — tuned by industry veterans for each discipline." },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Padding top", "default": 0 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Padding bottom", "default": 0 }
+  ],
+  "presets": [
+    {
+      "name": "REACH Multi-sport",
+      "blocks": [
+        { "type": "sport", "settings": { "icon": "bike", "name": "Cycling", "tag": "Road · Gravel · MTB", "lines": "Map & Data Control\nSensor-free Cadence / Power Reading\nClimb 94% · Cruise 84–91% · Descent 81%" } },
+        { "type": "sport", "settings": { "icon": "rowing", "name": "Rowing · Kayaking · Canoeing", "tag": "On the water", "lines": "Legacy Device Data Simulation\nREACH Dynamic Metrics\nHeading Stability · Stroke Quality · SPM-Synced LED" } },
+        { "type": "sport", "settings": { "icon": "skydiving", "name": "Skydiving", "tag": "Free fall", "lines": "REACH Custom Dashboard\nLayered Maps · Terrain-Wind-Adjusted\nLanding Zone Prediction · Wind SW 42° 4 m/s" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

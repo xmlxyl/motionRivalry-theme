@@ -73,10 +73,6 @@
 </style>
 
 {%- style -%}
-  .header-wrapper--vi {
-    --landing-accent-primary: {{ settings.landing_accent_primary }};
-  }
-
   .header {
     padding: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px 3rem {{ section.settings.padding_bottom | times: 0.5 | round: 0 }}px 3rem;
   }
@@ -110,7 +106,7 @@
   endfor
 -%}
 
-<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="header-wrapper header-wrapper--vi color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}">
+<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}">
   {%- liquid
     assign social_links = false
     assign localization_forms = false
@@ -273,12 +269,14 @@
             <span class="svg-wrapper">{{'icon-cart.svg' | inline_asset_content }}</span>
           {% endif %}
         <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
-        <div class="cart-count-bubble">
-          {%- if cart.item_count < 100 -%}
-            <span aria-hidden="true">{{ cart.item_count }}</span>
-          {%- endif -%}
-          <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
-        </div>
+        {%- if cart != empty -%}
+          <div class="cart-count-bubble">
+            {%- if cart.item_count < 100 -%}
+              <span aria-hidden="true">{{ cart.item_count }}</span>
+            {%- endif -%}
+            <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+          </div>
+        {%- endif -%}
       </a>
     </div>
   </header>
@@ -620,21 +618,21 @@
       "type": "range",
       "id": "padding_top",
       "min": 0,
-      "max": 100,
-      "step": 1,
+      "max": 36,
+      "step": 4,
       "unit": "px",
       "label": "t:sections.all.padding.padding_top",
-      "default": 10
+      "default": 20
     },
     {
       "type": "range",
       "id": "padding_bottom",
       "min": 0,
-      "max": 100,
-      "step": 1,
+      "max": 36,
+      "step": 4,
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
-      "default": 10
+      "default": 20
     }
   ],
   "blocks": [

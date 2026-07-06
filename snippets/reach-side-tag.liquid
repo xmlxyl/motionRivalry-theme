@@ -1,0 +1,5 @@
+{%- if text != blank -%}
+  <span class="reach-side-tag reach-side-tag--{{ side | default: 'left' }}" aria-hidden="true">
+    {{ text }}
+  </span>
+{%- endif -%}

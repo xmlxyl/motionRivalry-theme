@@ -1,0 +1,84 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "video_xP84ry": {
+      "type": "video",
+      "settings": {
+        "heading": "",
+        "heading_size": "h2",
+        "enable_video_looping": true,
+        "video": "shopify:\/\/files\/videos\/INSIGHT Video.mp4",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "cover_image": "shopify:\/\/shop_images\/DP_front_backlit.png",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "scheme-3",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "image_banner_NbpHW3": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/paddle_GPS.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "image_banner_ddaEyK": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/4fe093c96f4032c267dcf9151a3d3743_c6e1a2aa-b976-4397-82d8-97a0133a0498.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "image_banner_Rc6Fmd": {
+      "type": "image-banner",
+      "custom_css": [],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/989a402d40fca88d4bf88bf40b1dd39b_86576197-8864-4db7-a642-092b3d660eb6.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-4",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    }
+  },
+  "order": [
+    "video_xP84ry",
+    "image_banner_NbpHW3",
+    "image_banner_ddaEyK",
+    "image_banner_Rc6Fmd"
+  ]
+}

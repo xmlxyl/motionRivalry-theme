@@ -1,0 +1,242 @@
+{{ 'reach-reservation.css' | asset_url | stylesheet_tag }}
+{% render 'reach-fonts' %}
+{% render 'reach-padding', section: section %}
+
+<section class="reach-page reach-page__section section-{{ section.id }}-padding">
+  {% render 'reach-side-tag', text: section.settings.side_tag, side: 'right' %}
+
+  {%- comment -%} GestureAnalytics — bg-surface {%- endcomment -%}
+  <div class="reach-band reach-band--surface">
+    <div class="reach-page__inner reach-showcase__stack">
+      <div class="reach-grid-12 reach-showcase__row">
+        <div class="reach-col-7 reach-showcase__media">
+          {% render 'reach-media', image: section.settings.companion_image, label: section.settings.companion_image_label, ratio: '4x3' %}
+        </div>
+        <div class="reach-col-5 reach-showcase__copy">
+          {% render 'reach-showcase-eyebrow', text: section.settings.companion_eyebrow, icon: 'sparkles' %}
+          <h2 class="reach-page__heading reach-showcase__heading">{{ section.settings.companion_heading }}</h2>
+          <p class="reach-page__text reach-showcase__text">{{ section.settings.companion_text }}</p>
+        </div>
+      </div>
+
+      <div class="reach-grid-12 reach-showcase__row reach-showcase__row--split">
+        <div class="reach-col-5 reach-showcase__copy reach-showcase__copy--analytics">
+          {% render 'reach-showcase-eyebrow', text: section.settings.analytics_eyebrow, icon: 'bar-chart' %}
+          <h2 class="reach-page__heading reach-showcase__heading">{{ section.settings.analytics_heading }}</h2>
+          <p class="reach-page__text reach-showcase__text">
+            {%- if section.settings.analytics_text_lead != blank -%}
+              <span class="reach-showcase__text-lead">{{ section.settings.analytics_text_lead }}</span>
+            {%- endif -%}
+            {%- if section.settings.analytics_text_lead != blank and section.settings.analytics_text != blank %} {%- endif -%}
+            {{- section.settings.analytics_text -}}
+          </p>
+          {%- if section.settings.analytics_badge != blank -%}
+            <p class="reach-showcase__pill">
+              {% render 'reach-showcase-icon', icon: 'sparkles' %}
+              {{ section.settings.analytics_badge }}
+            </p>
+          {%- endif -%}
+        </div>
+        <div class="reach-col-7 reach-showcase__media reach-showcase__media--analytics">
+          {% render 'reach-media', image: section.settings.analytics_image, label: section.settings.analytics_image_label, ratio: 'video', contain: true, class: 'reach-showcase__dashboard' %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} ModularDesign — bg-background {%- endcomment -%}
+  <div class="reach-band">
+    <div class="reach-page__inner">
+      <div class="reach-grid-12 reach-showcase__row reach-showcase__modular">
+        <div class="reach-col-5 reach-showcase__copy reach-showcase__modular-copy">
+          <p class="reach-page__eyebrow">{{ section.settings.modular_eyebrow }}</p>
+          <h2 class="reach-page__heading reach-showcase__heading reach-showcase__heading--modular">{{ section.settings.modular_heading }}</h2>
+          <p class="reach-page__text reach-showcase__text">
+            {% render 'reach-text-highlights',
+              text: section.settings.modular_text,
+              highlight_1: section.settings.modular_text_highlight
+            %}
+          </p>
+          <ul class="reach-feature-list reach-showcase__features">
+            {%- assign features = section.settings.modular_features | newline_to_br | split: '<br />' -%}
+            {%- for feature in features -%}
+              {%- assign feature_clean = feature | strip_html | strip -%}
+              {%- if feature_clean != blank -%}
+                <li class="reach-feature-list__item{% if feature_clean == section.settings.modular_feature_highlight %} reach-feature-list__item--brand{% endif %}">
+                  <span class="reach-bullet reach-bullet--md"></span>
+                  {{ feature_clean }}
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+        </div>
+        <div class="reach-col-7 reach-showcase__modular-aside">
+          <div class="reach-module__grid">
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'module' -%}
+                <article class="reach-module" {{ block.shopify_attributes }}>
+                  <div class="reach-module__media{% if block.settings.icon == 'wind' %} reach-module__media--wind{% endif %}">
+                    {% render 'reach-media', image: block.settings.image, label: block.settings.title, ratio: 'landscape', contain: true, class: 'reach-module__image' %}
+                  </div>
+                  <span class="reach-module__icon">
+                    {% render 'reach-module-icon', icon: block.settings.icon %}
+                  </span>
+                  <h3 class="reach-module__title">{{ block.settings.title }}</h3>
+                  <ul class="reach-module__list">
+                    {%- assign items = block.settings.items | newline_to_br | split: '<br />' -%}
+                    {%- for item in items -%}
+                      {%- assign item_clean = item | strip_html | strip -%}
+                      {%- if item_clean != blank -%}
+                        <li class="reach-module__list-item">
+                          <span class="reach-module__bullet"></span>
+                          <span>{{ item_clean }}</span>
+                        </li>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </ul>
+                </article>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} ProGradeHardware — bg-surface {%- endcomment -%}
+  <div class="reach-band reach-band--surface">
+    <div class="reach-page__inner reach-showcase__hardware">
+      <div class="reach-showcase__hardware-intro">
+        <p class="reach-page__eyebrow">{{ section.settings.hardware_eyebrow }}</p>
+        <h2 class="reach-page__heading reach-showcase__heading reach-showcase__heading--modular">{{ section.settings.hardware_heading }}</h2>
+        <p class="reach-page__text reach-showcase__text">
+          {% render 'reach-text-highlights',
+            text: section.settings.hardware_text,
+            highlight_1: section.settings.hardware_text_highlight
+          %}
+        </p>
+      </div>
+
+      <div class="reach-hardware__layout">
+        <ul class="reach-hardware-spec-list">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'spec_left' -%}
+              <li class="reach-hardware-spec" {{ block.shopify_attributes }}>
+                <p class="reach-hardware-spec__label">{{ block.settings.label }}</p>
+                <p class="reach-hardware-spec__value">{{ block.settings.value }}</p>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+
+        <div class="reach-hardware__media">
+          {% render 'reach-media', image: section.settings.hardware_image, label: section.settings.hardware_image_label, ratio: 'square', contain: true, class: 'reach-hardware__image' %}
+        </div>
+
+        <ul class="reach-hardware-spec-list">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'spec_right' -%}
+              <li class="reach-hardware-spec" {{ block.shopify_attributes }}>
+                <p class="reach-hardware-spec__label">{{ block.settings.label }}</p>
+                <p class="reach-hardware-spec__value">{{ block.settings.value }}</p>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "REACH Product Showcase",
+  "tag": "section",
+  "class": "section-reach-showcase",
+  "blocks": [
+    {
+      "type": "module",
+      "name": "Module",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "wind", "label": "Wind" },
+            { "value": "camera", "label": "Camera" },
+            { "value": "radio", "label": "Radio" },
+            { "value": "radar", "label": "Radar" }
+          ],
+          "default": "wind"
+        },
+        { "type": "text", "id": "title", "label": "Title", "default": "Wind Speed Meter" },
+        { "type": "textarea", "id": "items", "label": "Items (one per line)" },
+        { "type": "image_picker", "id": "image", "label": "Image" }
+      ]
+    },
+    {
+      "type": "spec_left",
+      "name": "Left spec",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label" },
+        { "type": "text", "id": "value", "label": "Value" }
+      ]
+    },
+    {
+      "type": "spec_right",
+      "name": "Right spec",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label" },
+        { "type": "text", "id": "value", "label": "Value" }
+      ]
+    }
+  ],
+  "settings": [
+    { "type": "text", "id": "side_tag", "label": "Side tag", "default": "[ A tech company in sports ]" },
+    { "type": "text", "id": "companion_eyebrow", "label": "Companion eyebrow", "default": "[ Insight Link app ]" },
+    { "type": "image_picker", "id": "companion_image", "label": "Companion app image" },
+    { "type": "text", "id": "companion_image_label", "label": "Companion image label", "default": "Insight Link companion app" },
+    { "type": "text", "id": "companion_heading", "label": "Companion heading", "default": "Your dedicated companion app." },
+    { "type": "textarea", "id": "companion_text", "label": "Companion text", "default": "The Insight Link app for iOS and Android pairs over ANT+ for real-time monitoring, route planning and post-session analysis. Every ride, row and flight syncs to the cloud — review splits, replay tracks and share your best lines with the community." },
+    { "type": "text", "id": "analytics_eyebrow", "label": "Analytics eyebrow", "default": "[ Intelligence in motion ]" },
+    { "type": "image_picker", "id": "analytics_image", "label": "Analytics image" },
+    { "type": "text", "id": "analytics_image_label", "label": "Analytics image label", "default": "Analytics dashboard" },
+    { "type": "text", "id": "analytics_heading", "label": "Analytics heading", "default": "Professional analytics." },
+    { "type": "text", "id": "analytics_text_lead", "label": "Analytics text lead", "default": "Sophisticated intelligence." },
+    { "type": "textarea", "id": "analytics_text", "label": "Analytics text", "default": "REACH leverages custom-engineered processing to extract high-fidelity performance data even without external sensors. Advanced visualization ensures every insight is displayed with total clarity — streamlining your setup while maintaining the data integrity required for elite competition." },
+    { "type": "text", "id": "analytics_badge", "label": "Analytics badge", "default": "Real-time feedback · Instant insights" },
+    { "type": "text", "id": "modular_eyebrow", "label": "Modular eyebrow", "default": "[ Modular design ]" },
+    { "type": "text", "id": "modular_heading", "label": "Modular heading", "default": "Modularity for versatility." },
+    { "type": "text", "id": "modular_text_highlight", "label": "Modular text highlight", "default": "modular architecture" },
+    { "type": "textarea", "id": "modular_text", "label": "Modular text", "default": "Engineered with a modular architecture, REACH transcends the limitations of single-purpose hardware. Seamlessly integrate specialized modules to extend functionality and optimize your configuration for any operational requirement in any sport." },
+    { "type": "textarea", "id": "modular_features", "label": "Modular features (one per line)", "default": "USB-Standard\nPower Delivery\nSerial Port\nOpen Source" },
+    { "type": "text", "id": "modular_feature_highlight", "label": "Highlighted feature", "default": "Open Source" },
+    { "type": "text", "id": "hardware_eyebrow", "label": "Hardware eyebrow", "default": "[ Tactical hardware ]" },
+    { "type": "text", "id": "hardware_heading", "label": "Hardware heading", "default": "Pro-grade hardware." },
+    { "type": "text", "id": "hardware_text_highlight", "label": "Hardware text highlight", "default": "up to 26 hours of battery life on load." },
+    { "type": "textarea", "id": "hardware_text", "label": "Hardware text", "default": "Featuring a 3.5\" sunlight-readable Blanview LCD, REACH is encased in a rugged IPX7-rated dual-shot body. Engineered for extremes, it withstands rain, water spray, high-altitude cold and intense vibrations while delivering up to 26 hours of battery life on load." },
+    { "type": "image_picker", "id": "hardware_image", "label": "Hardware image" },
+    { "type": "text", "id": "hardware_image_label", "label": "Hardware image label", "default": "Internal hardware" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Padding top", "default": 0 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Padding bottom", "default": 0 }
+  ],
+  "presets": [
+    {
+      "name": "REACH Product Showcase",
+      "blocks": [
+        { "type": "module", "settings": { "icon": "wind", "title": "Wind Speed Meter", "items": "Real-time Wind Speed & Direction\nRotatable Sensor Head\n0.1 m/s Resolution" } },
+        { "type": "module", "settings": { "icon": "camera", "title": "Action Camera", "items": "1080p 60 fps\nRotatable\nIPX4 Splash Proof" } },
+        { "type": "module", "settings": { "icon": "radio", "title": "Walkie Talkie", "items": "Rotatable\nHumidity Sensor\nRES @0.1 m/s" } },
+        { "type": "module", "settings": { "icon": "radar", "title": "Radar", "items": "Rotatable\nHumidity Sensor\nRES @0.1 m/s" } },
+        { "type": "spec_left", "settings": { "label": "IMU · Gyro · Mag", "value": "9-Axis @ 200 Hz" } },
+        { "type": "spec_left", "settings": { "label": "Baro", "value": "10 cm RES @ 1000 Hz" } },
+        { "type": "spec_left", "settings": { "label": "GPS", "value": "GPS · BeiDou · GLONASS @ 10 Hz" } },
+        { "type": "spec_right", "settings": { "label": "SoC", "value": "Cortex-A7 + RISC-V" } },
+        { "type": "spec_right", "settings": { "label": "LED Lightbar", "value": "Programmable RGB · Auto Brightness" } },
+        { "type": "spec_right", "settings": { "label": "Speaker / Mic", "value": "High Output · High Fidelity" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

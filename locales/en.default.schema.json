@@ -142,9 +142,6 @@
         "secondary_button_label": {
           "label": "Outline button"
         },
-        "subtitle": {
-          "label": "Subtitle"
-        },
         "shadow": {
           "label": "Shadow"
         }

@@ -1,0 +1,43 @@
+{%- liquid
+  assign ratio_class = 'reach-media--landscape'
+  case ratio
+    when 'square'
+      assign ratio_class = 'reach-media--square'
+    when 'portrait'
+      assign ratio_class = 'reach-media--portrait'
+    when 'video'
+      assign ratio_class = 'reach-media--video'
+    when 'wide'
+      assign ratio_class = 'reach-media--wide'
+    when '4x3'
+      assign ratio_class = 'reach-media--4x3'
+    when 'fill'
+      assign ratio_class = 'reach-media--fill'
+  endcase
+
+  if contain
+    assign img_class = 'reach-media__img reach-media__img--contain'
+  else
+    assign img_class = 'reach-media__img'
+  endif
+-%}
+<div class="reach-media {{ ratio_class }}{% if class != blank %} {{ class }}{% endif %}">
+  {%- if video_url != blank -%}
+    <video autoplay muted loop playsinline preload="metadata">
+      <source src="{{ video_url }}" type="video/mp4">
+    </video>
+  {%- elsif image != blank -%}
+    {{
+      image
+      | image_url: width: 1600
+      | image_tag:
+        widths: '375, 750, 1100, 1600',
+        sizes: '100vw',
+        alt: label,
+        class: img_class,
+        loading: 'lazy'
+    }}
+  {%- else -%}
+    {% render 'reach-fallback-image', alt: label, class: img_class %}
+  {%- endif -%}
+</div>

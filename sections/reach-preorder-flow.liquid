@@ -1,0 +1,124 @@
+{{ 'reach-reservation.css' | asset_url | stylesheet_tag }}
+{% render 'reach-fonts' %}
+{% render 'reach-padding', section: section %}
+
+<section class="reach-page reach-page__section section-{{ section.id }}-padding">
+  {% render 'reach-side-tag', text: section.settings.side_tag, side: 'left' %}
+
+  <div class="reach-page__inner reach-preorder">
+    <div class="reach-preorder__intro">
+      <p class="reach-page__eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2 class="reach-page__heading reach-showcase__heading reach-showcase__heading--modular">{{ section.settings.heading }}</h2>
+    </div>
+
+    {%- assign step_count = 0 -%}
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'step' -%}
+        {%- assign step_count = step_count | plus: 1 -%}
+      {%- endif -%}
+    {%- endfor -%}
+
+    <div class="reach-steps">
+      {%- assign step_index = 0 -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'step' -%}
+          {%- assign step_index = step_index | plus: 1 -%}
+          <article class="reach-step" {{ block.shopify_attributes }}>
+            <h3 class="reach-step__title">{{ block.settings.title }}</h3>
+
+            <div class="reach-step__timeline">
+              <span class="reach-step__connector reach-step__connector--left{% if step_index == 1 %} reach-step__connector--hidden{% endif %}" aria-hidden="true"></span>
+              <span class="reach-step__connector reach-step__connector--right{% if step_index == step_count %} reach-step__connector--hidden{% endif %}" aria-hidden="true"></span>
+              <span class="reach-step__pill{% if block.settings.active %} reach-step__pill--active{% endif %}">{{ block.settings.tag }}</span>
+            </div>
+
+            <div class="reach-step__card{% if block.settings.active %} reach-step__card--active{% else %} reach-step__card--surface{% endif %}">
+              <p class="reach-step__lead">{{ block.settings.lead }}</p>
+              {%- if block.settings.bullets != blank -%}
+                {%- if block.settings.active and block.settings.bullets_label != blank -%}
+                  <p class="reach-step__bullets-label">{{ block.settings.bullets_label }}</p>
+                {%- endif -%}
+                <ul class="reach-step__bullets{% unless block.settings.active %} reach-step__bullets--plain{% endunless %}">
+                  {%- assign bullets = block.settings.bullets | newline_to_br | split: '<br />' -%}
+                  {%- for bullet in bullets -%}
+                    {%- assign bullet_clean = bullet | strip_html | strip -%}
+                    {%- if bullet_clean != blank -%}
+                      <li class="reach-step__bullet-item">
+                        {%- if block.settings.active -%}
+                          <span class="reach-step__bullet" aria-hidden="true"></span>
+                        {%- endif -%}
+                        <span>{{ bullet_clean }}</span>
+                      </li>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </ul>
+              {%- endif -%}
+            </div>
+          </article>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.notes != blank -%}
+      <div class="reach-preorder__notes">
+        <p class="reach-preorder__notes-label">{{ section.settings.notes_label }}</p>
+        <ul class="reach-preorder__notes-list">
+          {%- assign notes = section.settings.notes | newline_to_br | split: '<br />' -%}
+          {%- for note in notes -%}
+            {%- assign note_clean = note | strip_html | strip -%}
+            {%- if note_clean != blank -%}
+              <li class="reach-preorder__notes-item">
+                <span class="reach-step__bullet" aria-hidden="true"></span>
+                <span>{{ note_clean }}</span>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "REACH Preorder Flow",
+  "tag": "section",
+  "class": "section-reach-preorder",
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        { "type": "text", "id": "tag", "label": "Tag", "default": "Step 1" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Pre-Order Phase" },
+        { "type": "textarea", "id": "lead", "label": "Lead text" },
+        { "type": "text", "id": "bullets_label", "label": "Bullets label", "default": "Next Steps" },
+        { "type": "textarea", "id": "bullets", "label": "Bullets (one per line)" },
+        { "type": "checkbox", "id": "active", "label": "Active step", "default": false }
+      ]
+    }
+  ],
+  "settings": [
+    { "type": "text", "id": "side_tag", "label": "Side tag", "default": "[ A tech company in sports ]" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "[ Deposit flow ]" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "From $5 deposit to first delivery." },
+    { "type": "text", "id": "notes_label", "label": "Notes label", "default": "Please Note" },
+    { "type": "textarea", "id": "notes", "label": "Notes (one per line)" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Padding top", "default": 0 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Padding bottom", "default": 0 }
+  ],
+  "presets": [
+    {
+      "name": "REACH Preorder Flow",
+      "blocks": [
+        { "type": "step", "settings": { "tag": "Step 1", "title": "Pre-Order Phase", "lead": "Secure your spot with a fully refundable $5 deposit. Reserve your REACH early at the exclusive VIP price of $334 (MSRP $599) and be among the first to access our Kickstarter launch offers.", "bullets_label": "Next Steps", "bullets": "Check your email for confirmation and exclusive updates.\nJoin our Facebook Group to connect with the community and get early news.\nStay tuned for early-access invitations and special launch perks.", "active": true } },
+        { "type": "step", "settings": { "tag": "Step 2", "title": "Kickstarter Launch in June", "lead": "Pledge the Super Early Bird deal at launch.", "bullets": "The email for your Kickstarter pledge should match the one you used for your deposit." } },
+        { "type": "step", "settings": { "tag": "Step 3", "title": "After Campaign Ends", "lead": "Priority Shipping begins in October 2026.", "bullets": "Partial refund (deposit + extra savings) issued within 14 business days after the campaign ends." } }
+      ],
+      "settings": {
+        "notes": "Use the same email for your deposit and Kickstarter pledge.\nDeposits are risk-free and fully refundable after the campaign.\nFree shipping to select countries / regions.\nAll timelines are estimates and may shift slightly."
+      }
+    }
+  ]
+}
+{% endschema %}

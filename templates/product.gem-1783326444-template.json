@@ -105,7 +105,7 @@
       "type": "image-banner",
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/06_ff6a4156-2a8c-4e0c-8105-e11452a2380e.jpg",
+        "image": "shopify:\/\/shop_images\/06_ff6a4156-2a8c-4e0c-8105-e11452a2380e.jpg",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "desktop_content_position": "middle-center",

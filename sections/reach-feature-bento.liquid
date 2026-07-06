@@ -1,0 +1,119 @@
+{{ 'reach-reservation.css' | asset_url | stylesheet_tag }}
+{% render 'reach-fonts' %}
+{% render 'reach-padding', section: section %}
+
+<section id="platform" class="reach-page reach-page__section section-{{ section.id }}-padding">
+  {% render 'reach-side-tag', text: section.settings.side_tag, side: 'left' %}
+
+  <div class="reach-page__inner reach-bento-section" style="padding-top:5rem;padding-bottom:5rem;">
+    <div class="reach-bento-header">
+      <div>
+        <p class="reach-page__eyebrow">{{ section.settings.eyebrow }}</p>
+        <h2 class="reach-page__heading reach-bento-header__heading">{{ section.settings.heading }}</h2>
+      </div>
+      <span class="reach-bento-header__dot" aria-hidden="true"></span>
+    </div>
+
+    <div class="reach-bento">
+      {%- for block in section.blocks -%}
+        <article
+          class="reach-bento__tile reach-bento__tile--{{ block.settings.span }}"
+          {{ block.shopify_attributes }}
+        >
+          {%- if block.settings.kind == 'sport_icons' -%}
+            {% render 'reach-bento-sport-icons', title: block.settings.title %}
+          {%- else -%}
+            {% render 'reach-media',
+              image: block.settings.image,
+              label: block.settings.image_label,
+              ratio: 'fill',
+              contain: block.settings.contain
+            %}
+            <div class="reach-bento__overlay reach-bento__overlay--{{ block.settings.align }}">
+              {%- if block.settings.eyebrow != blank -%}
+                <div class="reach-bento__eyebrow">{{ block.settings.eyebrow }}</div>
+                <h3 class="reach-bento__title reach-bento__title--offset">{{ block.settings.title }}</h3>
+              {%- else -%}
+                <h3 class="reach-bento__title">{{ block.settings.title }}</h3>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+        </article>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "REACH Feature Bento",
+  "tag": "section",
+  "class": "section-reach-feature-bento",
+  "blocks": [
+    {
+      "type": "tile",
+      "name": "Feature tile",
+      "settings": [
+        {
+          "type": "select",
+          "id": "kind",
+          "label": "Tile type",
+          "options": [
+            { "value": "image", "label": "Image" },
+            { "value": "sport_icons", "label": "Sport icons" }
+          ],
+          "default": "image"
+        },
+        { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Waterproof Built for the Elements" },
+        { "type": "text", "id": "image_label", "label": "Image placeholder label", "default": "Feature image" },
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "checkbox", "id": "contain", "label": "Contain image", "default": false },
+        {
+          "type": "select",
+          "id": "align",
+          "label": "Text overlay position",
+          "options": [
+            { "value": "bottom", "label": "Bottom" },
+            { "value": "top", "label": "Top" }
+          ],
+          "default": "bottom"
+        },
+        {
+          "type": "select",
+          "id": "span",
+          "label": "Grid span",
+          "options": [
+            { "value": "1x1", "label": "1×1" },
+            { "value": "2x1", "label": "2×1" },
+            { "value": "2x2", "label": "2×2" }
+          ],
+          "default": "1x1"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    { "type": "text", "id": "side_tag", "label": "Side tag", "default": "[ A tech company in sports ]" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "[ One device · All sports ]" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Every spec built to break the limits." },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Padding top", "default": 0 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Padding bottom", "default": 0 }
+  ],
+  "presets": [
+    {
+      "name": "REACH Feature Bento",
+      "blocks": [
+        { "type": "tile", "settings": { "eyebrow": "IPX7", "title": "Waterproof Built for the Elements", "span": "2x2", "image_label": "REACH in rain" } },
+        { "type": "tile", "settings": { "eyebrow": "10 Hz", "title": "GPS · IMU · Gyro · Barometer", "span": "2x1", "image_label": "GPS navigation" } },
+        { "type": "tile", "settings": { "eyebrow": "3.5\"", "title": "Color Display", "span": "1x1", "contain": true, "image_label": "Color display" } },
+        { "type": "tile", "settings": { "eyebrow": "26h", "title": "All-Day Battery Life", "span": "1x1", "contain": true, "image_label": "Battery module" } },
+        { "type": "tile", "settings": { "title": "Hot-Swap Modular Design", "span": "2x2", "contain": true, "image_label": "Modular design" } },
+        { "type": "tile", "settings": { "title": "Professional Data", "span": "1x1", "contain": true, "image_label": "Pro dashboard" } },
+        { "type": "tile", "settings": { "kind": "sport_icons", "title": "Multi-sport\nSupport", "span": "1x1" } },
+        { "type": "tile", "settings": { "title": "Custom Dashboard", "span": "2x1", "image_label": "Custom dashboard" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,67 @@
+{{ 'reach-reservation.css' | asset_url | stylesheet_tag }}
+{% render 'reach-fonts' %}
+{% render 'reach-padding', section: section %}
+
+<section class="reach-page reach-page__section reach-page__section--surface section-{{ section.id }}-padding">
+  <div class="reach-page__inner reach-shipping">
+    <div class="reach-shipping__intro">
+      <p class="reach-page__eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2 class="reach-page__heading reach-showcase__heading reach-showcase__heading--modular">{{ section.settings.heading }}</h2>
+      <p class="reach-page__text reach-showcase__text">{{ section.settings.description }}</p>
+    </div>
+
+    <div class="reach-shipping__regions">
+      {%- for block in section.blocks -%}
+        <article class="reach-shipping-card" {{ block.shopify_attributes }}>
+          <p class="reach-shipping-card__title">
+            <span class="reach-shipping-card__dot" aria-hidden="true"></span>
+            {{ block.settings.title }}
+          </p>
+          <p class="reach-shipping-card__list">{{ block.settings.list }}</p>
+        </article>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.disclaimer != blank -%}
+      <p class="reach-shipping__disclaimer">{{ section.settings.disclaimer }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "REACH Shipping",
+  "tag": "section",
+  "class": "section-reach-shipping",
+  "blocks": [
+    {
+      "type": "region",
+      "name": "Region",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "North America" },
+        { "type": "textarea", "id": "list", "label": "Countries list" }
+      ]
+    }
+  ],
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "[ Shipping ]" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Worldwide Free Shipping." },
+    { "type": "textarea", "id": "description", "label": "Description", "default": "We're thrilled to offer free shipping to our early supporters across the globe. Whether you are in the major tech hubs or growing communities, we've got your delivery covered with no extra shipping fees at checkout." },
+    { "type": "textarea", "id": "disclaimer", "label": "Disclaimer", "default": "*Please note: while shipping is entirely free, local import regulations vary. Any applicable customs duties, VAT or local import taxes are not included in the pledge price and remain the responsibility of the backer." },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Padding top", "default": 0 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Padding bottom", "default": 0 }
+  ],
+  "presets": [
+    {
+      "name": "REACH Shipping",
+      "blocks": [
+        { "type": "region", "settings": { "title": "North America", "list": "United States, Canada, Dominican Rep., Haiti, Jamaica, Bahamas, Barbados, Trinidad & Tobago, Antigua & Barbuda." } },
+        { "type": "region", "settings": { "title": "Europe", "list": "United Kingdom, Germany, France, Italy, Spain, Netherlands, Belgium, Switzerland, Sweden, Norway, Denmark, Finland, Ireland, Luxembourg, Greece, Poland, Czech Republic, Slovakia, Hungary, Bulgaria, Slovenia, Bosnia & Herz., N. Macedonia, Moldova, Latvia, Lithuania, Andorra, Monaco, San Marino, Liechtenstein, Iceland." } },
+        { "type": "region", "settings": { "title": "Asia-Pacific", "list": "Australia, New Zealand, Japan, Hong Kong, Malaysia, Indonesia, Philippines, Vietnam." } },
+        { "type": "region", "settings": { "title": "Latin America", "list": "Brazil, Colombia, Ecuador, Peru, Venezuela, Costa Rica, Panama, Guatemala, Honduras, El Salvador, Nicaragua, Guyana." } },
+        { "type": "region", "settings": { "title": "Africa & Middle East", "list": "Morocco, Algeria, Nigeria, Cameroon, Ivory Coast, Gabon, Botswana, Zambia, Benin, Togo, Guinea, Israel, Oman." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

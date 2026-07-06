@@ -1,0 +1,83 @@
+{{ 'reach-reservation.css' | asset_url | stylesheet_tag }}
+{% render 'reach-fonts' %}
+{% render 'reach-padding', section: section %}
+
+<section id="pricing" class="reach-page reach-page__section reach-page__section--surface section-{{ section.id }}-padding">
+  {% render 'reach-side-tag', text: section.settings.side_tag, side: 'right' %}
+
+  <div class="reach-page__inner reach-pricing" style="padding-top:5rem;padding-bottom:5rem;">
+    <div class="reach-pricing__intro">
+      <p class="reach-page__eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2 class="reach-page__heading">{{ section.settings.heading | newline_to_br }}</h2>
+      <p class="reach-page__text reach-pricing__description">{{ section.settings.description }}</p>
+    </div>
+
+    <div class="reach-pricing__layout reach-grid-12">
+      <div class="reach-col-7 reach-pricing__media">
+        {% render 'reach-media', image: section.settings.image, label: section.settings.image_label, ratio: 'wide' %}
+      </div>
+
+      <div class="reach-col-5 reach-pricing__aside">
+        <div class="reach-pricing__tier-grid">
+          <div class="reach-tier-card">
+            <span class="reach-tier-card__badge">{{ section.settings.early_bird_label }}</span>
+            <div class="reach-tier-card__price-row">
+              <span class="reach-price reach-price--lg">{{ section.settings.early_bird_price }}</span>
+              <span class="reach-tier-card__msrp reach-tier-card__msrp--inline">{{ section.settings.early_bird_msrp }}</span>
+            </div>
+            <p class="reach-tier-card__note">{{ section.settings.early_bird_note }}</p>
+          </div>
+
+          <div class="reach-tier-card reach-tier-card--vip">
+            <span class="reach-page__badge reach-page__badge--vip">{{ section.settings.vip_label }}</span>
+            <div class="reach-tier-card__price-row">
+              <span class="reach-price reach-price--lg reach-price--brand">{{ section.settings.vip_price }}</span>
+            </div>
+            <div class="reach-tier-card__save-row">
+              <span class="reach-tier-card__save">{{ section.settings.vip_save }}</span>
+            </div>
+            <p class="reach-tier-card__msrp">{{ section.settings.vip_msrp }}</p>
+            <p class="reach-tier-card__note">{{ section.settings.vip_note }}</p>
+          </div>
+        </div>
+
+        <p class="reach-tier__footer">{{ section.settings.tier_footer }}</p>
+
+        {% render 'reach-cta', url: section.settings.cta_url, label: section.settings.cta_label, class: 'reach-cta--full' %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "REACH Pricing Tiers",
+  "tag": "section",
+  "class": "section-reach-pricing",
+  "settings": [
+    { "type": "text", "id": "side_tag", "label": "Side tag", "default": "[ A tech company in sports ]" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "[ Reserve now ]" },
+    { "type": "textarea", "id": "heading", "label": "Heading", "default": "Lock in the best deal today\nwith a $5 deposit!" },
+    { "type": "textarea", "id": "description", "label": "Description", "default": "Get the best deal — available only before the Kickstarter launch. Reserve your spot with a refundable $5 deposit to secure an exclusive offer." },
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "image_label", "label": "Image label", "default": "Pricing hero" },
+    { "type": "header", "content": "Early Bird tier" },
+    { "type": "text", "id": "early_bird_label", "label": "Label", "default": "Early Bird" },
+    { "type": "text", "id": "early_bird_price", "label": "Price", "default": "$359" },
+    { "type": "text", "id": "early_bird_msrp", "label": "MSRP", "default": "MSRP $599" },
+    { "type": "text", "id": "early_bird_note", "label": "Note", "default": "First-batch backers · ships first." },
+    { "type": "header", "content": "VIP tier" },
+    { "type": "text", "id": "vip_label", "label": "Label", "default": "VIP Only" },
+    { "type": "text", "id": "vip_price", "label": "Price", "default": "$334" },
+    { "type": "text", "id": "vip_save", "label": "Save badge", "default": "Save 45% Off" },
+    { "type": "text", "id": "vip_msrp", "label": "MSRP", "default": "MSRP $599" },
+    { "type": "text", "id": "vip_note", "label": "Note", "default": "Deposit holders only · exclusive lifetime price." },
+    { "type": "text", "id": "tier_footer", "label": "Footer text", "default": "Get the Best Deal · Available Only Before the Kickstarter Launch" },
+    { "type": "text", "id": "cta_url", "label": "CTA URL", "default": "/products/motion-rivalry-insight-stroke-gauge" },
+    { "type": "text", "id": "cta_label", "label": "CTA label", "default": "Reserve with $5 Deposit" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Padding top", "default": 0 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Padding bottom", "default": 0 }
+  ],
+  "presets": [{ "name": "REACH Pricing Tiers" }]
+}
+{% endschema %}

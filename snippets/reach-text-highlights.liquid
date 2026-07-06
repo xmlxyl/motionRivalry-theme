@@ -1,0 +1,16 @@
+{%- liquid
+  assign class_name = class | default: 'reach-showcase__text-lead'
+-%}
+{%- if highlight_1 != blank and text contains highlight_1 -%}
+  {%- assign parts = text | split: highlight_1 -%}
+  {{- parts[0] -}}<span class="{{ class_name }}">{{ highlight_1 }}</span>
+  {%- assign remainder = parts[1] -%}
+  {%- if highlight_2 != blank and remainder contains highlight_2 -%}
+    {%- assign parts2 = remainder | split: highlight_2 -%}
+    {{- parts2[0] -}}<span class="{{ class_name }}">{{ highlight_2 }}</span>{{- parts2[1] -}}
+  {%- else -%}
+    {{- remainder -}}
+  {%- endif -%}
+{%- else -%}
+  {{- text -}}
+{%- endif -%}

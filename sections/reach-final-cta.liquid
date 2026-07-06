@@ -1,0 +1,103 @@
+{{ 'reach-reservation.css' | asset_url | stylesheet_tag }}
+{% render 'reach-fonts' %}
+{% render 'reach-padding', section: section %}
+
+<section id="contact" class="reach-page reach-page__section reach-page__section--lilac section-{{ section.id }}-padding">
+  <div class="reach-page__inner reach-final-cta">
+    <div class="reach-grid-12 reach-final-cta__layout">
+      <div class="reach-col-7 reach-final-cta__main">
+        <p class="reach-page__eyebrow reach-final-cta__eyebrow">{{ section.settings.eyebrow }}</p>
+        <h2 class="reach-page__heading reach-page__heading--final">{{ section.settings.heading | newline_to_br }}</h2>
+        <p class="reach-page__text reach-final-cta__description">{{ section.settings.description }}</p>
+
+        <ul class="reach-final-cta__perks">
+          {%- assign perks = section.settings.perks | newline_to_br | split: '<br />' -%}
+          {%- for perk in perks -%}
+            {%- assign perk_clean = perk | strip_html | strip -%}
+            {%- if perk_clean != blank -%}
+              <li class="reach-final-cta__perk">
+                {% render 'reach-check-circle' %}
+                <span>{{ perk_clean }}</span>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+
+        <div class="reach-final-cta__actions">
+          {% render 'reach-cta', url: section.settings.cta_url, label: section.settings.cta_label, class: 'reach-cta--dark' %}
+        </div>
+      </div>
+
+      <div class="reach-col-5 reach-final-cta__aside">
+        <article class="reach-final-card">
+          <div class="reach-final-card__header">
+            <span class="reach-final-card__icon-box">
+              {% render 'reach-final-icon', icon: 'kickstarter' %}
+            </span>
+            <p class="reach-final-card__badge">{{ section.settings.kickstarter_badge }}</p>
+          </div>
+          <h3 class="reach-final-card__title">{{ section.settings.kickstarter_title }}</h3>
+          <p class="reach-final-card__text">{{ section.settings.kickstarter_text }}</p>
+          {%- if section.settings.kickstarter_url != blank -%}
+            <a href="{{ section.settings.kickstarter_url }}" class="reach-final-card__link" target="_blank" rel="noopener noreferrer">
+              {% render 'reach-final-icon', icon: 'kickstarter', size: 'sm' %}
+              <span>{{ section.settings.kickstarter_label }}</span>
+              <svg class="reach-final-card__external" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M7 7h10v10"/><path d="M7 17 17 7"/>
+              </svg>
+            </a>
+          {%- endif -%}
+        </article>
+
+        <article class="reach-final-card">
+          <div class="reach-final-card__header">
+            <span class="reach-final-card__icon-box">
+              {% render 'reach-final-icon', icon: 'facebook' %}
+            </span>
+            <p class="reach-final-card__badge">{{ section.settings.community_badge }}</p>
+          </div>
+          <h3 class="reach-final-card__title">{{ section.settings.facebook_title }}</h3>
+          <p class="reach-final-card__text">{{ section.settings.facebook_text }}</p>
+          {%- if section.settings.facebook_url != blank -%}
+            <a href="{{ section.settings.facebook_url }}" class="reach-final-card__link" target="_blank" rel="noopener noreferrer">
+              {% render 'reach-final-icon', icon: 'facebook', size: 'sm' %}
+              <span>{{ section.settings.facebook_label }}</span>
+              <svg class="reach-final-card__external" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M7 7h10v10"/><path d="M7 17 17 7"/>
+              </svg>
+            </a>
+          {%- endif -%}
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "REACH Final CTA",
+  "tag": "section",
+  "class": "section-reach-final-cta",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "[ One more step ]" },
+    { "type": "textarea", "id": "heading", "label": "Heading", "default": "Crucial next step —\ndon't miss the deal." },
+    { "type": "textarea", "id": "description", "label": "Description", "default": "Thanks for supporting our REACH Modular Sports Computer Kickstarter campaign. As a deposit holder, you now enjoy:" },
+    { "type": "textarea", "id": "perks", "label": "Perks (one per line)", "default": "Up to 45% OFF MSRP\nPriority shipping before the general release\nAccess to more exclusive offers for early supporters" },
+    { "type": "text", "id": "cta_url", "label": "Deposit CTA URL", "default": "/products/motion-rivalry-insight-stroke-gauge" },
+    { "type": "text", "id": "cta_label", "label": "Deposit CTA label", "default": "Pay $5 Deposit" },
+    { "type": "text", "id": "kickstarter_badge", "label": "Kickstarter badge", "default": "Kickstarter" },
+    { "type": "text", "id": "kickstarter_title", "label": "Kickstarter title", "default": "Follow our campaign" },
+    { "type": "textarea", "id": "kickstarter_text", "label": "Kickstarter text", "default": "Sign up on Kickstarter & follow us to get an instant notification the second we go live." },
+    { "type": "url", "id": "kickstarter_url", "label": "Kickstarter URL" },
+    { "type": "text", "id": "kickstarter_label", "label": "Kickstarter link label", "default": "Follow our campaign" },
+    { "type": "text", "id": "community_badge", "label": "Community badge", "default": "Community" },
+    { "type": "text", "id": "facebook_title", "label": "Facebook title", "default": "Join our Facebook group" },
+    { "type": "textarea", "id": "facebook_text", "label": "Facebook text", "default": "Be part of our community and get the inside scoop on everything REACH Modular Sports Computer." },
+    { "type": "url", "id": "facebook_url", "label": "Facebook URL" },
+    { "type": "text", "id": "facebook_label", "label": "Facebook link label", "default": "Join now" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Padding top", "default": 0 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Padding bottom", "default": 0 }
+  ],
+  "presets": [{ "name": "REACH Final CTA" }]
+}
+{% endschema %}

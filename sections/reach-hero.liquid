@@ -1,0 +1,104 @@
+{{ 'reach-reservation.css' | asset_url | stylesheet_tag }}
+{% render 'reach-fonts' %}
+{% render 'reach-padding', section: section %}
+
+<section id="reach-hero" class="reach-page reach-page__section reach-page__section--surface section-{{ section.id }}-padding">
+  {% render 'reach-side-tag', text: section.settings.side_tag, side: 'left' %}
+  {% render 'reach-side-tag', text: section.settings.side_tag, side: 'right' %}
+
+  <div class="reach-hero__desktop">
+    <div class="reach-hero__bg">
+      {%- if section.settings.image != blank -%}
+        {{ section.settings.image | image_url: width: 2400 | image_tag: class: 'reach-hero__bg-img', loading: 'eager', alt: section.settings.heading_reach }}
+      {%- else -%}
+        {% render 'reach-fallback-image', alt: section.settings.heading_reach, class: 'reach-hero__bg-img', loading: 'eager' %}
+      {%- endif -%}
+      <div class="reach-hero__gradient reach-hero__gradient--lr" aria-hidden="true"></div>
+      <div class="reach-hero__gradient reach-hero__gradient--bottom" aria-hidden="true"></div>
+    </div>
+    <div class="reach-page__inner reach-hero__content">
+      <div class="reach-grid-12">
+        <div class="reach-col-6">
+          <span class="reach-page__badge">
+            <span class="reach-page__badge-dot"></span>
+            {{ section.settings.badge_text }}
+          </span>
+          <h1 class="reach-page__heading reach-page__heading--hero" style="margin-top:1.5rem;">
+            <span class="reach-page__heading--hero-reach">{{ section.settings.heading_reach }}</span>
+            <span class="reach-page__heading--hero-sub">{{ section.settings.heading_sub }}</span>
+          </h1>
+          <p class="reach-page__text reach-page__text--lead" style="margin-top:1.5rem; ">{{ section.settings.description }}</p>
+          <div style="margin-top:2rem;">
+            {% render 'reach-cta', url: section.settings.cta_url, label: section.settings.cta_label %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="reach-hero__mobile">
+    <div class="reach-hero__mobile-media">
+      {% render 'reach-media', image: section.settings.image_mobile, label: section.settings.mobile_image_label, ratio: 'portrait' %}
+      <div class="reach-hero__mobile-fade"></div>
+      <div class="reach-hero__badge-pos">
+        <span class="reach-page__badge">
+          <span class="reach-page__badge-dot"></span>
+          {{ section.settings.badge_text }}
+        </span>
+      </div>
+    </div>
+    <div class="reach-page__inner reach-hero__mobile-content">
+      <h1 class="reach-page__heading reach-page__heading--hero">
+        <span class="reach-page__heading--hero-reach">{{ section.settings.heading_reach }}</span>
+        <span class="reach-page__heading--hero-sub">{{ section.settings.heading_sub }}</span>
+      </h1>
+      <p class="reach-page__text reach-page__text--lead" style="margin-top:1.25rem;">{{ section.settings.description }}</p>
+      <div style="margin-top:1.75rem;">
+        {% render 'reach-cta', url: section.settings.cta_url, label: section.settings.cta_label, class: 'reach-cta--full' %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="reach-sticky-bar" id="reach-sticky-bar-{{ section.id }}">
+  <span class="reach-sticky-bar__text">{{ section.settings.sticky_text }}</span>
+  {% render 'reach-cta', url: section.settings.cta_url, label: section.settings.cta_label %}
+</div>
+
+<script>
+  (function () {
+    var bar = document.getElementById('reach-sticky-bar-{{ section.id }}');
+    var hero = document.getElementById('reach-hero');
+    if (!bar || !hero) return;
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        bar.classList.toggle('is-visible', !entry.isIntersecting);
+      });
+    }, { threshold: 0 });
+    observer.observe(hero);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "REACH Hero",
+  "tag": "section",
+  "class": "section-reach-hero",
+  "settings": [
+    { "type": "text", "id": "side_tag", "label": "Side tag", "default": "[ A tech company in sports ]" },
+    { "type": "text", "id": "badge_text", "label": "Badge", "default": "Pre-launch · Kickstarter" },
+    { "type": "text", "id": "heading_reach", "label": "Heading (REACH)", "default": "REACH" },
+    { "type": "text", "id": "heading_sub", "label": "Heading (sub)", "default": "Motion Rivalry" },
+    { "type": "textarea", "id": "description", "label": "Description", "default": "The World's First Modular Sports Computer. One device. All sports. No limits." },
+    { "type": "image_picker", "id": "image", "label": "Hero image (desktop)" },
+    { "type": "image_picker", "id": "image_mobile", "label": "Hero image (mobile)" },
+    { "type": "text", "id": "mobile_image_label", "label": "Mobile image label", "default": "Hero image" },
+    { "type": "text", "id": "cta_url", "label": "CTA URL", "default": "/products/motion-rivalry-insight-stroke-gauge" },
+    { "type": "text", "id": "cta_label", "label": "CTA label", "default": "Reserve with $5 Deposit" },
+    { "type": "text", "id": "sticky_text", "label": "Sticky bar text", "default": "Pay $5, Save 45% Off" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Padding top", "default": 0 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Padding bottom", "default": 0 }
+  ],
+  "presets": [{ "name": "REACH Hero" }]
+}
+{% endschema %}

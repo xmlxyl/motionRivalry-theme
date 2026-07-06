@@ -1,0 +1,930 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "reach_hero": {
+      "type": "reach-hero",
+      "settings": {
+        "side_tag": "[ A tech company in sports ]",
+        "badge_text": "Pre-launch · Kickstarter",
+        "heading_reach": "REACH",
+        "heading_sub": "Motion Rivalry",
+        "description": "The World's First Modular Sports Computer. One device. All sports. No limits.",
+        "image": "shopify://shop_images/hero-lx13.jpg",
+        "mobile_image_label": "Hero image",
+        "cta_url": "/products/motion-rivalry-insight-stroke-gauge",
+        "cta_label": "Reserve with $5 Deposit",
+        "sticky_text": "Pay $5, Save 45% Off",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "reach_deposit": {
+      "type": "reach-deposit-lockin",
+      "blocks": {
+        "perk_1": {
+          "type": "perk",
+          "settings": {
+            "icon": "truck",
+            "text": "Priority Free Shipping in October 2026"
+          }
+        },
+        "perk_2": {
+          "type": "perk",
+          "settings": {
+            "icon": "dollar",
+            "text": "Lock in a Guaranteed Best Price with a $5 Fully Refundable Deposit"
+          }
+        },
+        "perk_3": {
+          "type": "perk",
+          "settings": {
+            "icon": "users",
+            "text": "Join Our Community for Exclusive Events and Extra Rewards"
+          }
+        }
+      },
+      "block_order": [
+        "perk_1",
+        "perk_2",
+        "perk_3"
+      ],
+      "settings": {
+        "side_tag": "[ A tech company in sports ]",
+        "badge_label": "VIP Only",
+        "heading": "Lock in the best deal today with a $5 deposit.",
+        "description": "Three exclusive perks reserved for VIP backers — refundable anytime before launch.",
+        "corner_image": "shopify://shop_images/reserve-corner-hero-v3.png",
+        "corner_image_label": "Device corner detail",
+        "card_save_label": "Save up to 45% off",
+        "deposit_amount": "$5",
+        "deposit_label": "deposit",
+        "price_note_prefix": "VIP price",
+        "price_note_highlight": "revealed at Kickstarter launch",
+        "refundable_label": "100% Refundable",
+        "checkout_note": "Secure checkout · Stripe protected",
+        "cta_url": "/products/motion-rivalry-insight-stroke-gauge",
+        "cta_label": "Pay $5 Deposit",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "reach_marquee": {
+      "type": "reach-marquee",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "text": "ONE DEVICE · EVERY SPORT"
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "text": "IPX7 WATERPROOF"
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "text": "10Hz GPS"
+          }
+        },
+        "item_4": {
+          "type": "item",
+          "settings": {
+            "text": "MODULAR BY DESIGN"
+          }
+        },
+        "item_5": {
+          "type": "item",
+          "settings": {
+            "text": "26-HOUR BATTERY"
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4",
+        "item_5"
+      ],
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "reach_features": {
+      "type": "reach-feature-bento",
+      "blocks": {
+        "tile_1": {
+          "type": "tile",
+          "settings": {
+            "kind": "image",
+            "eyebrow": "IPX7",
+            "title": "Waterproof Built for the Elements",
+            "image_label": "REACH in rain",
+            "image": "shopify://shop_images/mr-waterproof.png",
+            "contain": false,
+            "align": "bottom",
+            "span": "2x2"
+          }
+        },
+        "tile_2": {
+          "type": "tile",
+          "settings": {
+            "kind": "image",
+            "eyebrow": "10 Hz",
+            "title": "GPS · IMU · Gyro · Barometer",
+            "image_label": "GPS navigation",
+            "image": "shopify://shop_images/gps-map-navigation.jpg",
+            "contain": false,
+            "align": "bottom",
+            "span": "2x1"
+          }
+        },
+        "tile_3": {
+          "type": "tile",
+          "settings": {
+            "kind": "image",
+            "eyebrow": "3.5\"",
+            "title": "Color Display",
+            "image_label": "Color display",
+            "image": "shopify://shop_images/mr-rowing-screen.png",
+            "contain": true,
+            "align": "bottom",
+            "span": "1x1"
+          }
+        },
+        "tile_4": {
+          "type": "tile",
+          "settings": {
+            "kind": "image",
+            "eyebrow": "26h",
+            "title": "All-Day Battery Life",
+            "image_label": "Battery module",
+            "image": "shopify://shop_images/battery-26h.png",
+            "contain": true,
+            "align": "bottom",
+            "span": "1x1"
+          }
+        },
+        "tile_5": {
+          "type": "tile",
+          "settings": {
+            "kind": "image",
+            "eyebrow": "",
+            "title": "Hot-Swap Modular Design",
+            "image_label": "Modular design",
+            "image": "shopify://shop_images/modular-real.png",
+            "contain": true,
+            "align": "bottom",
+            "span": "2x2"
+          }
+        },
+        "tile_6": {
+          "type": "tile",
+          "settings": {
+            "kind": "image",
+            "eyebrow": "",
+            "title": "Professional Data",
+            "image_label": "Pro dashboard",
+            "image": "shopify://shop_images/cycling-screen.png",
+            "contain": true,
+            "align": "bottom",
+            "span": "1x1"
+          }
+        },
+        "tile_7": {
+          "type": "tile",
+          "settings": {
+            "kind": "sport_icons",
+            "eyebrow": "",
+            "title": "Multi-sportSupport",
+            "image_label": "Feature image",
+            "contain": false,
+            "align": "bottom",
+            "span": "1x1"
+          }
+        },
+        "tile_8": {
+          "type": "tile",
+          "settings": {
+            "kind": "image",
+            "eyebrow": "",
+            "title": "Custom Dashboard",
+            "image_label": "Custom dashboard",
+            "image": "shopify://shop_images/custom-dashboard.png",
+            "contain": false,
+            "align": "bottom",
+            "span": "2x1"
+          }
+        }
+      },
+      "block_order": [
+        "tile_1",
+        "tile_2",
+        "tile_3",
+        "tile_4",
+        "tile_5",
+        "tile_6",
+        "tile_7",
+        "tile_8"
+      ],
+      "settings": {
+        "side_tag": "[ A tech company in sports ]",
+        "eyebrow": "[ One device · All sports ]",
+        "heading": "Every spec built to break the limits.",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "reach_pricing": {
+      "type": "reach-pricing-tiers",
+      "settings": {
+        "side_tag": "[ A tech company in sports ]",
+        "eyebrow": "[ Reserve now ]",
+        "heading": "Lock in the best deal today\nwith a $5 deposit!",
+        "description": "Get the best deal — available only before the Kickstarter launch. Reserve your spot with a refundable $5 deposit to secure an exclusive offer.",
+        "image": "shopify://shop_images/deposit-corner-topleft-v8.png",
+        "image_label": "Pricing hero",
+        "early_bird_label": "Early Bird",
+        "early_bird_price": "$359",
+        "early_bird_msrp": "MSRP $599",
+        "early_bird_note": "First-batch backers · ships first.",
+        "vip_label": "VIP Only",
+        "vip_price": "$334",
+        "vip_save": "Save 45% Off",
+        "vip_msrp": "MSRP $599",
+        "vip_note": "Deposit holders only · exclusive lifetime price.",
+        "tier_footer": "Get the Best Deal · Available Only Before the Kickstarter Launch",
+        "cta_url": "/products/motion-rivalry-insight-stroke-gauge",
+        "cta_label": "Reserve with $5 Deposit",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "reach_ai_vision": {
+      "type": "reach-ai-vision",
+      "blocks": {
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "icon": "map-pin",
+            "tag": "10 Hz GPS",
+            "title": "Sub-Second Positioning You Can Trust",
+            "body": "10 Hz multi-band GPS with GPS · BeiDou · GLONASS support locks your position ten times every second — so every corner, gate and waypoint is captured with race-grade precision."
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "icon": "compass",
+            "tag": "9-Axis IMU",
+            "title": "Motion Tuned for Every Discipline",
+            "body": "Accelerometer, gyroscope, magnetometer and a 0.1 m barometer fuse into discipline-specific models — cadence and power on the bike, stroke rate on the water, climb and sink on the wing."
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "icon": "shield-check",
+            "tag": "IPX7 · Sunlight Readable",
+            "title": "Built for Rain, Spray & Altitude",
+            "body": "A 3.5\" full-lamination Blanview color display stays readable in direct sun. The rugged IPX7 body withstands relentless rain, rough terrains, and high-altitude cold without missing a beat."
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3"
+      ],
+      "settings": {
+        "side_tag": "[ A tech company in sports ]",
+        "eyebrow": "[ Precision sensor suite ]",
+        "heading": "Race-grade data,\non every terrain.",
+        "description": "One sports computer. Four disciplines. Zero compromise on accuracy.",
+        "video_label": "Multi-sport montage",
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/1e85207753ff471c898e11053a163edb.mp4",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "reach_multisport": {
+      "type": "reach-multisport",
+      "blocks": {
+        "sport_1": {
+          "type": "sport",
+          "settings": {
+            "icon": "bike",
+            "name": "Cycling",
+            "tag": "Road · Gravel · MTB",
+            "lines": "Map & Data Control\nSensor-free Cadence / Power Reading\nClimb 94% · Cruise 84–91% · Descent 81%",
+            "screen_image": "shopify://shop_images/cycling-data-v2.gif",
+            "action_video_url": "https://cdn.shopify.com/videos/c/o/v/58ef684bc0c3470d86be43d01970914f.mp4"
+          }
+        },
+        "sport_2": {
+          "type": "sport",
+          "settings": {
+            "icon": "rowing",
+            "name": "Rowing · Kayaking · Canoeing",
+            "tag": "On the water",
+            "lines": "Legacy Device Data Simulation\nREACH Dynamic Metrics\nHeading Stability · Stroke Quality · SPM-Synced LED",
+            "screen_image": "shopify://shop_images/rowing.gif",
+            "action_video_url": "https://cdn.shopify.com/videos/c/o/v/3aef1b44f18249088a674e3afea96d48.mp4"
+          }
+        },
+        "sport_3": {
+          "type": "sport",
+          "settings": {
+            "icon": "skydiving",
+            "name": "Skydiving",
+            "tag": "Free fall",
+            "lines": "REACH Custom Dashboard\nLayered Maps · Terrain-Wind-Adjusted\nLanding Zone Prediction · Wind SW 42° 4 m/s",
+            "screen_image": "shopify://shop_images/paragliding.gif",
+            "action_video_url": "https://cdn.shopify.com/videos/c/o/v/ac301e3d26fb412ead8f05033ab38312.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "sport_1",
+        "sport_2",
+        "sport_3"
+      ],
+      "settings": {
+        "side_tag": "[ A tech company in sports ]",
+        "eyebrow": "[ Dynamic dashboards ]",
+        "heading_before": "One device.",
+        "heading_accent": "Every sport.",
+        "screen_label": "Device UI",
+        "field_label": "In the field",
+        "description": "REACH adapts to your sport with dedicated dashboards, sensor profiles, and accuracy models — tuned by industry veterans for each discipline.",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "reach_mid_cta": {
+      "type": "reach-mid-cta",
+      "settings": {
+        "badge_pay": "Pay $5",
+        "badge_save": "Save 45% off",
+        "heading": "Lock in your exclusive offer today.",
+        "description": "Reserve your spot with a $5 deposit and secure VIP pricing — available only before the Kickstarter launch.",
+        "early_bird_label": "Early Bird",
+        "early_bird_price": "$359",
+        "early_bird_msrp": "MSRP $599",
+        "vip_label": "VIP Only",
+        "vip_price": "$334",
+        "vip_save": "Save 45% Off",
+        "image": "shopify://shop_images/dp_2-4-v2.png",
+        "image_label": "REACH device",
+        "cta_url": "/products/motion-rivalry-insight-stroke-gauge",
+        "cta_label": "Pay $5 Deposit",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "reach_showcase": {
+      "type": "reach-product-showcase",
+      "blocks": {
+        "mod_1": {
+          "type": "module",
+          "settings": {
+            "icon": "wind",
+            "title": "Wind Speed Meter",
+            "items": "Real-time Wind Speed & Direction\nRotatable Sensor Head\n0.1 m/s Resolution",
+            "image": "shopify://shop_images/anemometer-closeup.png"
+          }
+        },
+        "mod_2": {
+          "type": "module",
+          "settings": {
+            "icon": "camera",
+            "title": "Action Camera",
+            "items": "1080p 60 fps\nRotatable\nIPX4 Splash Proof",
+            "image": "shopify://shop_images/cam.png"
+          }
+        },
+        "mod_3": {
+          "type": "module",
+          "settings": {
+            "icon": "radio",
+            "title": "Walkie Talkie",
+            "items": "Rotatable\nHumidity Sensor\nRES @0.1 m/s",
+            "image": "shopify://shop_images/walkie_0.png"
+          }
+        },
+        "mod_4": {
+          "type": "module",
+          "settings": {
+            "icon": "radar",
+            "title": "Radar",
+            "items": "Rotatable\nHumidity Sensor\nRES @0.1 m/s",
+            "image": "shopify://shop_images/radar-back-new-transparent.png"
+          }
+        },
+        "spec_l1": {
+          "type": "spec_left",
+          "settings": {
+            "label": "IMU · Gyro · Mag",
+            "value": "9-Axis @ 200 Hz"
+          }
+        },
+        "spec_l2": {
+          "type": "spec_left",
+          "settings": {
+            "label": "Baro",
+            "value": "10 cm RES @ 1000 Hz"
+          }
+        },
+        "spec_l3": {
+          "type": "spec_left",
+          "settings": {
+            "label": "GPS",
+            "value": "GPS · BeiDou · GLONASS @ 10 Hz"
+          }
+        },
+        "spec_r1": {
+          "type": "spec_right",
+          "settings": {
+            "label": "SoC",
+            "value": "Cortex-A7 + RISC-V"
+          }
+        },
+        "spec_r2": {
+          "type": "spec_right",
+          "settings": {
+            "label": "LED Lightbar",
+            "value": "Programmable RGB · Auto Brightness"
+          }
+        },
+        "spec_r3": {
+          "type": "spec_right",
+          "settings": {
+            "label": "Speaker / Mic",
+            "value": "High Output · High Fidelity"
+          }
+        }
+      },
+      "block_order": [
+        "mod_1",
+        "mod_2",
+        "mod_3",
+        "mod_4",
+        "spec_l1",
+        "spec_l2",
+        "spec_l3",
+        "spec_r1",
+        "spec_r2",
+        "spec_r3"
+      ],
+      "settings": {
+        "side_tag": "[ A tech company in sports ]",
+        "companion_eyebrow": "[ Insight Link app ]",
+        "companion_image": "shopify://shop_images/companion-app.jpg",
+        "companion_image_label": "Insight Link companion app",
+        "companion_heading": "Your dedicated companion app.",
+        "companion_text": "The Insight Link app for iOS and Android pairs over ANT+ for real-time monitoring, route planning and post-session analysis. Every ride, row and flight syncs to the cloud — review splits, replay tracks and share your best lines with the community.",
+        "analytics_eyebrow": "[ Intelligence in motion ]",
+        "analytics_image": "shopify://shop_images/analytics-dashboard-v3.png",
+        "analytics_image_label": "Analytics dashboard",
+        "analytics_heading": "Professional analytics.",
+        "analytics_text_lead": "Sophisticated intelligence.",
+        "analytics_text": "REACH leverages custom-engineered processing to extract high-fidelity performance data even without external sensors. Advanced visualization ensures every insight is displayed with total clarity — streamlining your setup while maintaining the data integrity required for elite competition.",
+        "analytics_badge": "Real-time feedback · Instant insights",
+        "modular_eyebrow": "[ Modular design ]",
+        "modular_heading": "Modularity for versatility.",
+        "modular_text_highlight": "modular architecture",
+        "modular_text": "Engineered with a modular architecture, REACH transcends the limitations of single-purpose hardware. Seamlessly integrate specialized modules to extend functionality and optimize your configuration for any operational requirement in any sport.",
+        "modular_features": "USB-Standard\nPower Delivery\nSerial Port\nOpen Source",
+        "modular_feature_highlight": "Open Source",
+        "hardware_eyebrow": "[ Tactical hardware ]",
+        "hardware_heading": "Pro-grade hardware.",
+        "hardware_text_highlight": "up to 26 hours of battery life on load.",
+        "hardware_text": "Featuring a 3.5\" sunlight-readable Blanview LCD, REACH is encased in a rugged IPX7-rated dual-shot body. Engineered for extremes, it withstands rain, water spray, high-altitude cold and intense vibrations while delivering up to 26 hours of battery life on load.",
+        "hardware_image": "shopify://shop_images/internal.jpg",
+        "hardware_image_label": "Internal hardware",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "reach_preorder": {
+      "type": "reach-preorder-flow",
+      "blocks": {
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "tag": "Step 1",
+            "title": "Pre-Order Phase",
+            "lead": "Secure your spot with a fully refundable $5 deposit. Reserve your REACH early at the exclusive VIP price of $334 (MSRP $599) and be among the first to access our Kickstarter launch offers.",
+            "bullets_label": "Next Steps",
+            "bullets": "Check your email for confirmation and exclusive updates.\nJoin our Facebook Group to connect with the community and get early news.\nStay tuned for early-access invitations and special launch perks.",
+            "active": true
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "tag": "Step 2",
+            "title": "Kickstarter Launch in June",
+            "lead": "Pledge the Super Early Bird deal at launch.",
+            "bullets_label": "Next Steps",
+            "bullets": "The email for your Kickstarter pledge should match the one you used for your deposit.",
+            "active": false
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "tag": "Step 3",
+            "title": "After Campaign Ends",
+            "lead": "Priority Shipping begins in October 2026.",
+            "bullets_label": "Next Steps",
+            "bullets": "Partial refund (deposit + extra savings) issued within 14 business days after the campaign ends.",
+            "active": false
+          }
+        }
+      },
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3"
+      ],
+      "settings": {
+        "side_tag": "[ A tech company in sports ]",
+        "eyebrow": "[ Deposit flow ]",
+        "heading": "From $5 deposit to first delivery.",
+        "notes_label": "Please Note",
+        "notes": "Use the same email for your deposit and Kickstarter pledge.\nDeposits are risk-free and fully refundable after the campaign.\nFree shipping to select countries / regions.\nAll timelines are estimates and may shift slightly.",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "reach_shipping": {
+      "type": "reach-shipping",
+      "blocks": {
+        "region_1": {
+          "type": "region",
+          "settings": {
+            "title": "North America",
+            "list": "United States, Canada, Dominican Rep., Haiti, Jamaica, Bahamas, Barbados, Trinidad & Tobago, Antigua & Barbuda."
+          }
+        },
+        "region_2": {
+          "type": "region",
+          "settings": {
+            "title": "Europe",
+            "list": "United Kingdom, Germany, France, Italy, Spain, Netherlands, Belgium, Switzerland, Sweden, Norway, Denmark, Finland, Ireland, Luxembourg, Greece, Poland, Czech Republic, Slovakia, Hungary, Bulgaria, Slovenia, Bosnia & Herz., N. Macedonia, Moldova, Latvia, Lithuania, Andorra, Monaco, San Marino, Liechtenstein, Iceland."
+          }
+        },
+        "region_3": {
+          "type": "region",
+          "settings": {
+            "title": "Asia-Pacific",
+            "list": "Australia, New Zealand, Japan, Hong Kong, Malaysia, Indonesia, Philippines, Vietnam."
+          }
+        },
+        "region_4": {
+          "type": "region",
+          "settings": {
+            "title": "Latin America",
+            "list": "Brazil, Colombia, Ecuador, Peru, Venezuela, Costa Rica, Panama, Guatemala, Honduras, El Salvador, Nicaragua, Guyana."
+          }
+        },
+        "region_5": {
+          "type": "region",
+          "settings": {
+            "title": "Africa & Middle East",
+            "list": "Morocco, Algeria, Nigeria, Cameroon, Ivory Coast, Gabon, Botswana, Zambia, Benin, Togo, Guinea, Israel, Oman."
+          }
+        }
+      },
+      "block_order": [
+        "region_1",
+        "region_2",
+        "region_3",
+        "region_4",
+        "region_5"
+      ],
+      "settings": {
+        "eyebrow": "[ Shipping ]",
+        "heading": "Worldwide Free Shipping.",
+        "description": "We're thrilled to offer free shipping to our early supporters across the globe. Whether you are in the major tech hubs or growing communities, we've got your delivery covered with no extra shipping fees at checkout.",
+        "disclaimer": "*Please note: while shipping is entirely free, local import regulations vary. Any applicable customs duties, VAT or local import taxes are not included in the pledge price and remain the responsibility of the backer.",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "reach_about": {
+      "type": "reach-about",
+      "blocks": {
+        "mount_1": {
+          "type": "mount",
+          "settings": {
+            "icon": "bike",
+            "title": "Bike Quick Mount"
+          }
+        },
+        "mount_2": {
+          "type": "mount",
+          "settings": {
+            "icon": "rowing",
+            "title": "Rowing / Kayak / Canoe Rail Mount"
+          }
+        },
+        "mount_3": {
+          "type": "mount",
+          "settings": {
+            "icon": "layers",
+            "title": "Bike-to-Any Adapter"
+          }
+        },
+        "mount_4": {
+          "type": "mount",
+          "settings": {
+            "icon": "mountain",
+            "title": "Universal Base"
+          }
+        }
+      },
+      "block_order": [
+        "mount_1",
+        "mount_2",
+        "mount_3",
+        "mount_4"
+      ],
+      "settings": {
+        "side_tag": "[ A tech company in sports ]",
+        "elite_eyebrow": "[ Olympic-grade engineering ]",
+        "elite_heading": "Elite biomechanical data.",
+        "elite_text_highlight_1": "sports industry veterans",
+        "elite_text_highlight_2": "expert-driven processing",
+        "elite_text": "Built by sports industry veterans and hardware innovators, REACH brings elite-level analytics to every athlete. With decades of collective experience in high-performance sports, our team ensures the high-fidelity data once exclusive to professional labs is now available in the field. By combining advanced motion sensors with expert-driven processing, we deliver the precision required to push your absolute limits.",
+        "elite_image_1": "shopify://shop_images/bio-tablet.jpg",
+        "elite_image_1_label": "Athlete stretching",
+        "elite_image_2": "shopify://shop_images/bio-dashboard.jpg",
+        "elite_image_2_label": "Lab data review",
+        "mount_eyebrow": "[ Versatile installation ]",
+        "mount_heading": "Adaptive Mount.",
+        "mount_text_highlight_1": "modular mounting interface",
+        "mount_text_highlight_2": "adaptive plate",
+        "mount_text": "REACH features a modular mounting interface designed to retrofit seamlessly onto existing industry-standard ecosystems. Whether utilizing quarter-turn cycling brackets, rail-mount for rowing boats or paragliding flight decks, our adaptive plate ensures a rock-solid connection to the existing connector base on your sport gear.",
+        "mount_image": "shopify://shop_images/mount-sports.jpg",
+        "mount_image_label": "Adaptive mount system",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "reach_final_cta": {
+      "type": "reach-final-cta",
+      "settings": {
+        "eyebrow": "[ One more step ]",
+        "heading": "Crucial next step —\ndon't miss the deal.",
+        "description": "Thanks for supporting our REACH Modular Sports Computer Kickstarter campaign. As a deposit holder, you now enjoy:",
+        "perks": "Up to 45% OFF MSRP\nPriority shipping before the general release\nAccess to more exclusive offers for early supporters",
+        "cta_url": "/products/motion-rivalry-insight-stroke-gauge",
+        "cta_label": "Pay $5 Deposit",
+        "kickstarter_badge": "Kickstarter",
+        "kickstarter_title": "Follow our campaign",
+        "kickstarter_text": "Sign up on Kickstarter & follow us to get an instant notification the second we go live.",
+        "kickstarter_url": "",
+        "kickstarter_label": "Follow our campaign",
+        "community_badge": "Community",
+        "facebook_title": "Join our Facebook group",
+        "facebook_text": "Be part of our community and get the inside scoop on everything REACH Modular Sports Computer.",
+        "facebook_url": "",
+        "facebook_label": "Join now",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "reach_specs": {
+      "type": "reach-specs",
+      "blocks": {
+        "group_1": {
+          "type": "group",
+          "settings": {
+            "title": "General",
+            "label_1": "Model",
+            "value_1": "REACH",
+            "label_2": "Target Sports",
+            "value_2": "Rowing, Kayaking, Cycling, Paragliding",
+            "label_3": "Weight",
+            "value_3": "156 g",
+            "label_4": "",
+            "value_4": "",
+            "label_5": "",
+            "value_5": "",
+            "label_6": "",
+            "value_6": ""
+          }
+        },
+        "group_2": {
+          "type": "group",
+          "settings": {
+            "title": "Display",
+            "label_1": "Display Size",
+            "value_1": "3.5\"",
+            "label_2": "Display Resolution",
+            "value_2": "640 × 960 pixels",
+            "label_3": "Display Technology",
+            "value_3": "Blanview TFT-LCD, 16M True Color",
+            "label_4": "",
+            "value_4": "",
+            "label_5": "",
+            "value_5": "",
+            "label_6": "",
+            "value_6": ""
+          }
+        },
+        "group_3": {
+          "type": "group",
+          "settings": {
+            "title": "Physical & Power",
+            "label_1": "Battery",
+            "value_1": "2900 mAh Lithium-ion Battery",
+            "label_2": "Battery Life",
+            "value_2": "26 hours",
+            "label_3": "Waterproof Rating",
+            "value_3": "IPX7",
+            "label_4": "",
+            "value_4": "",
+            "label_5": "",
+            "value_5": "",
+            "label_6": "",
+            "value_6": ""
+          }
+        },
+        "group_4": {
+          "type": "group",
+          "settings": {
+            "title": "Memory & Connectivity",
+            "label_1": "Memory",
+            "value_1": "24 GB Storage, 128 MB RAM",
+            "label_2": "Connectivity",
+            "value_2": "ANT+",
+            "label_3": "GPS",
+            "value_3": "10 Hz sampling, supports GPS, BeiDou, GLONASS",
+            "label_4": "",
+            "value_4": "",
+            "label_5": "",
+            "value_5": "",
+            "label_6": "",
+            "value_6": ""
+          }
+        },
+        "group_5": {
+          "type": "group",
+          "settings": {
+            "title": "Sensors & Feature Modules",
+            "label_1": "Sensors",
+            "value_1": "Accelerometer, Magnetometer, Gyroscope, Barometer (0.1 m), Ambient Light, GPS",
+            "label_2": "Feature Modules",
+            "value_2": "Camera, Two-Way Radio, Anemometer, Speed Radar",
+            "label_3": "App Integration",
+            "value_3": "Insight Link App (iOS / Android), Real-time Monitoring, Data Analysis System",
+            "label_4": "",
+            "value_4": "",
+            "label_5": "",
+            "value_5": "",
+            "label_6": "",
+            "value_6": ""
+          }
+        },
+        "group_6": {
+          "type": "group",
+          "settings": {
+            "title": "Accessory Compatibility",
+            "label_1": "Compatible",
+            "value_1": "Heart Rate Strap, Paddle Mate, Cadence Sensor",
+            "label_2": "",
+            "value_2": "",
+            "label_3": "",
+            "value_3": "",
+            "label_4": "",
+            "value_4": "",
+            "label_5": "",
+            "value_5": "",
+            "label_6": "",
+            "value_6": ""
+          }
+        }
+      },
+      "block_order": [
+        "group_1",
+        "group_2",
+        "group_3",
+        "group_4",
+        "group_5",
+        "group_6"
+      ],
+      "settings": {
+        "eyebrow": "[ Industrial design ]",
+        "heading": "Specifications.",
+        "hero_image": "shopify://shop_images/dp_1.png",
+        "hero_image_label": "Product shots",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "reach_faq": {
+      "type": "reach-faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Can I place multiple deposits for different units?",
+            "answer": "Yes. Each $5 deposit secures VIP pricing for one REACH. If you'd like to reserve more than one, simply place multiple deposits using the same email address."
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "What is the deposit for?",
+            "answer": "Your deposit unlocks exclusive VIP pricing, priority free shipping, and early-backer rewards. It also helps us plan production more accurately based on real demand."
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Is the deposit refundable?",
+            "answer": "Absolutely. If you change your mind, just contact us at hello@motion-rivalry.com and we'll issue a full refund — no questions asked."
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "How will the deposit be applied during the Kickstarter campaign?",
+            "answer": "After you complete your Kickstarter pledge using the same email as your deposit, we'll issue a partial refund once the campaign ends. This refund includes your deposit amount plus your extra VIP savings within 14 business days after the campaign ends."
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "question": "Will I be notified when the Kickstarter campaign launches?",
+            "answer": "Yes. You'll receive email reminders a few days before and on the day the campaign launches, so you won't miss your early access window."
+          }
+        },
+        "q6": {
+          "type": "question",
+          "settings": {
+            "question": "What if I use a different email on Kickstarter?",
+            "answer": "The email you use for your Kickstarter pledge must match the one you used for your deposit to ensure your discount and refund are correctly applied. If you need to update your email, contact us with your deposit confirmation and we'll assist you."
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6"
+      ],
+      "settings": {
+        "side_tag": "[ A tech company in sports ]",
+        "eyebrow": "[ FAQ ]",
+        "heading": "Questions, answered.",
+        "open_first": false,
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main",
+    "reach_hero",
+    "reach_deposit",
+    "reach_marquee",
+    "reach_features",
+    "reach_pricing",
+    "reach_ai_vision",
+    "reach_multisport",
+    "reach_mid_cta",
+    "reach_showcase",
+    "reach_preorder",
+    "reach_shipping",
+    "reach_about",
+    "reach_final_cta",
+    "reach_specs",
+    "reach_faq"
+  ]
+}

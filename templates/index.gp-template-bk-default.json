@@ -1,0 +1,84 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "order": [
+    "video_xP84ry",
+    "image_banner_NbpHW3",
+    "image_banner_ddaEyK",
+    "image_banner_Rc6Fmd"
+  ],
+  "sections": {
+    "image_banner_NbpHW3": {
+      "settings": {
+        "color_scheme": "",
+        "desktop_content_alignment": "center",
+        "desktop_content_position": "middle-center",
+        "image": "shopify://shop_images/paddle_GPS.png",
+        "image_behavior": "none",
+        "image_height": "adapt",
+        "image_overlay_opacity": 0,
+        "mobile_content_alignment": "center",
+        "show_text_below": true,
+        "show_text_box": true,
+        "stack_images_on_mobile": true
+      },
+      "type": "image-banner"
+    },
+    "image_banner_Rc6Fmd": {
+      "custom_css": [],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "desktop_content_alignment": "center",
+        "desktop_content_position": "middle-center",
+        "image": "shopify://shop_images/989a402d40fca88d4bf88bf40b1dd39b_86576197-8864-4db7-a642-092b3d660eb6.jpg",
+        "image_behavior": "none",
+        "image_height": "adapt",
+        "image_overlay_opacity": 0,
+        "mobile_content_alignment": "left",
+        "show_text_below": true,
+        "show_text_box": true,
+        "stack_images_on_mobile": true
+      },
+      "type": "image-banner"
+    },
+    "image_banner_ddaEyK": {
+      "settings": {
+        "color_scheme": "",
+        "desktop_content_alignment": "center",
+        "desktop_content_position": "middle-center",
+        "image": "shopify://shop_images/4fe093c96f4032c267dcf9151a3d3743_c6e1a2aa-b976-4397-82d8-97a0133a0498.jpg",
+        "image_behavior": "none",
+        "image_height": "adapt",
+        "image_overlay_opacity": 0,
+        "mobile_content_alignment": "center",
+        "show_text_below": true,
+        "show_text_box": true,
+        "stack_images_on_mobile": true
+      },
+      "type": "image-banner"
+    },
+    "video_xP84ry": {
+      "settings": {
+        "color_scheme": "scheme-3",
+        "cover_image": "shopify://shop_images/DP_front_backlit.png",
+        "description": "",
+        "enable_video_looping": true,
+        "full_width": false,
+        "heading": "",
+        "heading_size": "h2",
+        "padding_bottom": 0,
+        "padding_top": 0,
+        "video": "shopify://files/videos/INSIGHT Video.mp4",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+      },
+      "type": "video"
+    }
+  }
+}

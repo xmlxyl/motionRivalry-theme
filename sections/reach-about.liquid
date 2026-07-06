@@ -1,0 +1,123 @@
+{{ 'reach-reservation.css' | asset_url | stylesheet_tag }}
+{% render 'reach-fonts' %}
+{% render 'reach-padding', section: section %}
+
+<section class="reach-page reach-page__section section-{{ section.id }}-padding">
+  {% render 'reach-side-tag', text: section.settings.side_tag, side: 'right' %}
+
+  {%- comment -%} ElitePerformance — bg-background {%- endcomment -%}
+  <div class="reach-band">
+    <div class="reach-page__inner">
+      <div class="reach-grid-12 reach-about__elite">
+        <div class="reach-col-6 reach-about__copy">
+          <p class="reach-page__eyebrow">{{ section.settings.elite_eyebrow }}</p>
+          <h2 class="reach-page__heading reach-showcase__heading reach-showcase__heading--modular">{{ section.settings.elite_heading }}</h2>
+          <p class="reach-page__text reach-showcase__text">
+            {% render 'reach-text-highlights',
+              text: section.settings.elite_text,
+              highlight_1: section.settings.elite_text_highlight_1,
+              highlight_2: section.settings.elite_text_highlight_2
+            %}
+          </p>
+        </div>
+        <div class="reach-col-6 reach-about__elite-images">
+          {% render 'reach-media', image: section.settings.elite_image_1, label: section.settings.elite_image_1_label, ratio: 'portrait' %}
+          {% render 'reach-media', image: section.settings.elite_image_2, label: section.settings.elite_image_2_label, ratio: 'portrait' %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} AdaptiveMount — bg-surface {%- endcomment -%}
+  <div class="reach-band reach-band--surface">
+    <div class="reach-page__inner">
+      <div class="reach-grid-12 reach-about__mount">
+        <div class="reach-col-5 reach-about__copy">
+          <p class="reach-page__eyebrow">{{ section.settings.mount_eyebrow }}</p>
+          <h2 class="reach-page__heading reach-showcase__heading reach-showcase__heading--modular">{{ section.settings.mount_heading }}</h2>
+          <p class="reach-page__text reach-showcase__text">
+            {% render 'reach-text-highlights',
+              text: section.settings.mount_text,
+              highlight_1: section.settings.mount_text_highlight_1,
+              highlight_2: section.settings.mount_text_highlight_2
+            %}
+          </p>
+        </div>
+        <div class="reach-col-7 reach-about__mount-aside">
+          {% render 'reach-media', image: section.settings.mount_image, label: section.settings.mount_image_label, ratio: 'landscape' %}
+          <div class="reach-mount__grid">
+            {%- for block in section.blocks -%}
+              <article class="reach-mount-card" {{ block.shopify_attributes }}>
+                <span class="reach-mount-card__icon">
+                  {% render 'reach-mount-icon', icon: block.settings.icon %}
+                </span>
+                <span class="reach-mount-card__title">{{ block.settings.title }}</span>
+              </article>
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "REACH About",
+  "tag": "section",
+  "class": "section-reach-about",
+  "blocks": [
+    {
+      "type": "mount",
+      "name": "Mount type",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "bike", "label": "Bike" },
+            { "value": "rowing", "label": "Rowing" },
+            { "value": "layers", "label": "Layers" },
+            { "value": "mountain", "label": "Mountain" }
+          ],
+          "default": "bike"
+        },
+        { "type": "text", "id": "title", "label": "Title", "default": "Bike Quick Mount" }
+      ]
+    }
+  ],
+  "settings": [
+    { "type": "text", "id": "side_tag", "label": "Side tag", "default": "[ A tech company in sports ]" },
+    { "type": "text", "id": "elite_eyebrow", "label": "Elite eyebrow", "default": "[ Olympic-grade engineering ]" },
+    { "type": "text", "id": "elite_heading", "label": "Elite heading", "default": "Elite biomechanical data." },
+    { "type": "text", "id": "elite_text_highlight_1", "label": "Elite text highlight 1", "default": "sports industry veterans" },
+    { "type": "text", "id": "elite_text_highlight_2", "label": "Elite text highlight 2", "default": "expert-driven processing" },
+    { "type": "textarea", "id": "elite_text", "label": "Elite text", "default": "Built by sports industry veterans and hardware innovators, REACH brings elite-level analytics to every athlete. With decades of collective experience in high-performance sports, our team ensures the high-fidelity data once exclusive to professional labs is now available in the field. By combining advanced motion sensors with expert-driven processing, we deliver the precision required to push your absolute limits." },
+    { "type": "image_picker", "id": "elite_image_1", "label": "Elite image 1" },
+    { "type": "text", "id": "elite_image_1_label", "label": "Elite image 1 label", "default": "Athlete stretching" },
+    { "type": "image_picker", "id": "elite_image_2", "label": "Elite image 2" },
+    { "type": "text", "id": "elite_image_2_label", "label": "Elite image 2 label", "default": "Lab data review" },
+    { "type": "text", "id": "mount_eyebrow", "label": "Mount eyebrow", "default": "[ Versatile installation ]" },
+    { "type": "text", "id": "mount_heading", "label": "Mount heading", "default": "Adaptive Mount." },
+    { "type": "text", "id": "mount_text_highlight_1", "label": "Mount text highlight 1", "default": "modular mounting interface" },
+    { "type": "text", "id": "mount_text_highlight_2", "label": "Mount text highlight 2", "default": "adaptive plate" },
+    { "type": "textarea", "id": "mount_text", "label": "Mount text", "default": "REACH features a modular mounting interface designed to retrofit seamlessly onto existing industry-standard ecosystems. Whether utilizing quarter-turn cycling brackets, rail-mount for rowing boats or paragliding flight decks, our adaptive plate ensures a rock-solid connection to the existing connector base on your sport gear." },
+    { "type": "image_picker", "id": "mount_image", "label": "Mount image" },
+    { "type": "text", "id": "mount_image_label", "label": "Mount image label", "default": "Adaptive mount system" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Padding top", "default": 0 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Padding bottom", "default": 0 }
+  ],
+  "presets": [
+    {
+      "name": "REACH About",
+      "blocks": [
+        { "type": "mount", "settings": { "icon": "bike", "title": "Bike Quick Mount" } },
+        { "type": "mount", "settings": { "icon": "rowing", "title": "Rowing / Kayak / Canoe Rail Mount" } },
+        { "type": "mount", "settings": { "icon": "layers", "title": "Bike-to-Any Adapter" } },
+        { "type": "mount", "settings": { "icon": "mountain", "title": "Universal Base" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

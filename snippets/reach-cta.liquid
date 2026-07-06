@@ -1,0 +1,12 @@
+{%- liquid
+  assign cta_href = url | default: '/products/motion-rivalry-insight-stroke-gauge'
+-%}
+{%- if cta_href != blank -%}
+  <a
+    href="{{ cta_href }}"
+    class="reach-cta{% if class != blank %} {{ class }}{% endif %}"
+  >
+    {{ label | default: 'Pay $5 Deposit' }}
+    <span class="reach-cta__arrow" aria-hidden="true"></span>
+  </a>
+{%- endif -%}

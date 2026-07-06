@@ -1,0 +1,86 @@
+{{ 'reach-reservation.css' | asset_url | stylesheet_tag }}
+{% render 'reach-fonts' %}
+{% render 'reach-padding', section: section %}
+
+<section id="specs" class="reach-page reach-page__section reach-page__section--surface section-{{ section.id }}-padding">
+  <div class="reach-page__inner" style="padding-top:6rem;padding-bottom:6rem;">
+    <p class="reach-page__eyebrow">{{ section.settings.eyebrow }}</p>
+    <h2 class="reach-page__heading">{{ section.settings.heading }}</h2>
+
+    <div style="margin-top:3rem;">
+      {% render 'reach-media', image: section.settings.hero_image, label: section.settings.hero_image_label, ratio: 'video' %}
+    </div>
+
+    <div style="margin-top:3rem;border-top:1px solid var(--reach-border);">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'group' -%}
+          <div class="reach-spec-group" {{ block.shopify_attributes }}>
+            <div class="reach-spec-group__title">{{ block.settings.title }}</div>
+            <dl class="reach-spec-dl">
+              {%- for i in (1..6) -%}
+                {%- assign label_key = 'label_' | append: i -%}
+                {%- assign value_key = 'value_' | append: i -%}
+                {%- assign label = block.settings[label_key] -%}
+                {%- assign value = block.settings[value_key] -%}
+                {%- if label != blank -%}
+                  <div>
+                    <dt>{{ label }}</dt>
+                    <dd>{{ value }}</dd>
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </dl>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "REACH Specifications",
+  "tag": "section",
+  "class": "section-reach-specs",
+  "blocks": [
+    {
+      "type": "group",
+      "name": "Spec group",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Group title", "default": "General" },
+        { "type": "text", "id": "label_1", "label": "Label 1" },
+        { "type": "text", "id": "value_1", "label": "Value 1" },
+        { "type": "text", "id": "label_2", "label": "Label 2" },
+        { "type": "text", "id": "value_2", "label": "Value 2" },
+        { "type": "text", "id": "label_3", "label": "Label 3" },
+        { "type": "text", "id": "value_3", "label": "Value 3" },
+        { "type": "text", "id": "label_4", "label": "Label 4" },
+        { "type": "text", "id": "value_4", "label": "Value 4" },
+        { "type": "text", "id": "label_5", "label": "Label 5" },
+        { "type": "text", "id": "value_5", "label": "Value 5" },
+        { "type": "text", "id": "label_6", "label": "Label 6" },
+        { "type": "text", "id": "value_6", "label": "Value 6" }
+      ]
+    }
+  ],
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "[ Industrial design ]" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Specifications." },
+    { "type": "image_picker", "id": "hero_image", "label": "Hero image" },
+    { "type": "text", "id": "hero_image_label", "label": "Hero image label", "default": "Product shots" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Padding top", "default": 0 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Padding bottom", "default": 0 }
+  ],
+  "presets": [
+    {
+      "name": "REACH Specifications",
+      "blocks": [
+        { "type": "group", "settings": { "title": "General", "label_1": "Model", "value_1": "REACH", "label_2": "Target Sports", "value_2": "Rowing, Kayaking, Cycling, Paragliding", "label_3": "Weight", "value_3": "156 g" } },
+        { "type": "group", "settings": { "title": "Display", "label_1": "Display Size", "value_1": "3.5\"", "label_2": "Display Resolution", "value_2": "640 × 960 pixels", "label_3": "Display Technology", "value_3": "Blanview TFT-LCD, 16M True Color" } },
+        { "type": "group", "settings": { "title": "Physical & Power", "label_1": "Battery", "value_1": "2900 mAh Lithium-ion Battery", "label_2": "Battery Life", "value_2": "26 hours", "label_3": "Waterproof Rating", "value_3": "IPX7" } },
+        { "type": "group", "settings": { "title": "Memory & Connectivity", "label_1": "Memory", "value_1": "24 GB Storage, 128 MB RAM", "label_2": "Connectivity", "value_2": "ANT+", "label_3": "GPS", "value_3": "10 Hz sampling, supports GPS, BeiDou, GLONASS" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

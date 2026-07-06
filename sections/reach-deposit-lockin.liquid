@@ -1,0 +1,122 @@
+{{ 'reach-reservation.css' | asset_url | stylesheet_tag }}
+{% render 'reach-fonts' %}
+{% render 'reach-padding', section: section %}
+
+<section id="reserve" class="reach-page reach-page__section reach-page__section--surface section-{{ section.id }}-padding">
+  {% render 'reach-side-tag', text: section.settings.side_tag, side: 'left' %}
+  {% render 'reach-side-tag', text: section.settings.side_tag, side: 'right' %}
+
+  <div class="reach-page__inner" style="padding-top:5rem;padding-bottom:5rem;">
+    <div class="reach-grid-12">
+      <div class="reach-col-7">
+        <span class="reach-page__badge reach-page__badge--vip">{{ section.settings.badge_label }}</span>
+        <h2 class="reach-page__heading" style="margin-top:1.25rem;">{{ section.settings.heading }}</h2>
+        <p class="reach-page__text reach-page__text--lead" style="margin-top:1.5rem;max-width:70%">{{ section.settings.description }}</p>
+
+        {%- assign perk_count = 0 -%}
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'perk' -%}
+            {%- assign perk_count = perk_count | plus: 1 -%}
+          {%- endif -%}
+        {%- endfor -%}
+
+        <ul class="reach-perk-list">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'perk' -%}
+              <li class="reach-perk" {{ block.shopify_attributes }}>
+                <span class="reach-perk__icon">
+                  {% render 'reach-perk-icon', icon: block.settings.icon %}
+                </span>
+                <div class="reach-perk__body">
+                  <div class="reach-perk__index">
+                    {%- if forloop.index < 10 -%}0{%- endif -%}{{ forloop.index }} / {%- if perk_count < 10 -%}0{%- endif -%}{{ perk_count }}
+                  </div>
+                  <p class="reach-perk__text">{{ block.settings.text }}</p>
+                </div>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+
+      <div class="reach-col-5" style="display:flex;flex-direction:column;gap:1.5rem;">
+        {% render 'reach-media', image: section.settings.corner_image, label: section.settings.corner_image_label, ratio: 'square' %}
+
+        <div class="reach-card reach-card--brand">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;">
+            <span class="reach-page__badge reach-page__badge--vip">{{ section.settings.badge_label }}</span>
+            <span class="reach-label">{{ section.settings.card_save_label }}</span>
+          </div>
+          <div style="margin-top:2rem;display:flex;align-items:flex-end;gap:0.75rem;">
+            <span class="reach-price reach-price--xl">{{ section.settings.deposit_amount }}</span>
+            <span class="reach-label reach-deposit-label">{{ section.settings.deposit_label }}</span>
+          </div>
+          <p class="reach-page__text reach-page__text--sm" style="margin-top:0.75rem;">{{ section.settings.price_note_prefix }}<strong>{{ section.settings.price_note_highlight }}</strong></p>
+          <p class="reach-label" style="margin-top:1.5rem;">{{ section.settings.refundable_label }}</p>
+          <div style="margin-top:1.75rem;">
+            {% render 'reach-cta', url: section.settings.cta_url, label: section.settings.cta_label, class: 'reach-cta--full' %}
+          </div>
+          <p class="reach-card__note reach-card__note--center" style="margin-top:1rem;">{{ section.settings.checkout_note }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "REACH Deposit Lock-in",
+  "tag": "section",
+  "class": "section-reach-deposit",
+  "blocks": [
+    {
+      "type": "perk",
+      "name": "VIP perk",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "truck", "label": "Truck" },
+            { "value": "dollar", "label": "Dollar" },
+            { "value": "users", "label": "Users" }
+          ],
+          "default": "truck"
+        },
+        { "type": "text", "id": "text", "label": "Text", "default": "Priority Free Shipping in October 2026" }
+      ]
+    }
+  ],
+  "settings": [
+    { "type": "text", "id": "side_tag", "label": "Side tag", "default": "[ A tech company in sports ]" },
+    { "type": "text", "id": "badge_label", "label": "Badge label", "default": "VIP Only" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Lock in the best deal today with a $5 deposit." },
+    { "type": "textarea", "id": "description", "label": "Description", "default": "Three exclusive perks reserved for VIP backers — refundable anytime before launch." },
+    { "type": "image_picker", "id": "corner_image", "label": "Corner image" },
+    { "type": "text", "id": "corner_image_label", "label": "Corner image label", "default": "Device corner detail" },
+    { "type": "header", "content": "Deposit card" },
+    { "type": "text", "id": "card_save_label", "label": "Save label", "default": "Save up to 45% off" },
+    { "type": "text", "id": "deposit_amount", "label": "Deposit amount", "default": "$5" },
+    { "type": "text", "id": "deposit_label", "label": "Deposit label", "default": "deposit" },
+    { "type": "text", "id": "price_note_prefix", "label": "Price note prefix", "default": "VIP price " },
+    { "type": "text", "id": "price_note_highlight", "label": "Price note highlight", "default": "revealed at Kickstarter launch" },
+    { "type": "text", "id": "refundable_label", "label": "Refundable label", "default": "100% Refundable" },
+    { "type": "text", "id": "checkout_note", "label": "Checkout note", "default": "Secure checkout · Stripe protected" },
+    { "type": "text", "id": "cta_url", "label": "CTA URL", "default": "/products/motion-rivalry-insight-stroke-gauge" },
+    { "type": "text", "id": "cta_label", "label": "CTA label", "default": "Pay $5 Deposit" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Padding top", "default": 0 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Padding bottom", "default": 0 }
+  ],
+  "presets": [
+    {
+      "name": "REACH Deposit Lock-in",
+      "blocks": [
+        { "type": "perk", "settings": { "icon": "truck", "text": "Priority Free Shipping in October 2026" } },
+        { "type": "perk", "settings": { "icon": "dollar", "text": "Lock in a Guaranteed Best Price with a $5 Fully Refundable Deposit" } },
+        { "type": "perk", "settings": { "icon": "users", "text": "Join Our Community for Exclusive Events and Extra Rewards" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

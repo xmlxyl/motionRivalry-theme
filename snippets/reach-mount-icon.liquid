@@ -1,0 +1,25 @@
+{%- case icon -%}
+  {%- when 'bike' -%}
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="18.5" cy="17.5" r="3.5"/>
+      <circle cx="5.5" cy="17.5" r="3.5"/>
+      <circle cx="15" cy="5" r="1"/>
+      <path d="M12 17.5V14l-3-3 4-3 2 3h2"/>
+    </svg>
+  {%- when 'rowing' -%}
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M3 17h18"/>
+      <path d="M6 17V9l3-4h6l3 4v8"/>
+      <path d="M9 9h6"/>
+    </svg>
+  {%- when 'layers' -%}
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/>
+      <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/>
+      <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/>
+    </svg>
+  {%- when 'mountain' -%}
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="m8 3 4 8 5-5 5 15H2L8 3z"/>
+    </svg>
+{%- endcase -%}
