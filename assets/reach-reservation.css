@@ -39,6 +39,10 @@
   --reach-lilac: oklch(0.82 0.1 300);
   --reach-lilac-fg: oklch(0.15 0 0);
   --reach-bg: oklch(0.129 0.042 264.695);
+  --reach-bg-hex: #050914;
+  --reach-bg-rgb: 5, 9, 20;
+  --reach-bg-85: rgba(5, 9, 20, 0.85);
+  --reach-bg-60: rgba(5, 9, 20, 0.6);
   --reach-fg: #f4f4f5;
   --reach-surface: oklch(0.16 0 0);
   --reach-surface-2: oklch(0.2 0 0);
@@ -805,13 +809,13 @@
   color: var(--reach-muted);
   white-space: nowrap;
   pointer-events: none;
-  z-index: 2;
+  z-index: 3;
 }
 
-.reach-side-tag--left { left: -4.5rem; }
-.reach-side-tag--right { right: -4.5rem; }
+.reach-side-tag--left { left: 0.75rem; }
+.reach-side-tag--right { right: 0.75rem; }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 990px) {
   .reach-side-tag { display: block; }
 }
 
@@ -2673,6 +2677,17 @@
   overflow: hidden;
 }
 
+.reach-hero {
+  overflow: hidden;
+  --reach-hero-mask-color: #050914;
+  --reach-hero-mask-mid: rgba(5, 9, 20, 0.85);
+  --reach-hero-mask-bottom: rgba(5, 9, 20, 0.6);
+  --reach-hero-mask-edge: 12%;
+  --reach-hero-mask-mid-stop: 40%;
+  --reach-hero-mask-fade-end: 65%;
+  --reach-hero-mask-bottom-height: 25%;
+}
+
 .reach-hero__bg img,
 .reach-hero__bg-img {
   width: 100%;
@@ -2681,32 +2696,24 @@
   transform: scale(1.1) translateX(12%);
 }
 
-.reach-hero__gradient {
+/* Single configurable overlay — replaces separate lr + bottom gradients */
+.reach-hero__mask {
   position: absolute;
-  pointer-events: none;
-}
-
-/* vite: bg-gradient-to-r from-background via-background/85 via-40% to-transparent to-65% */
-.reach-hero__gradient--lr {
   inset: 0;
-  background: linear-gradient(
-    to right,
-    var(--reach-bg) 0%,
-    color-mix(in oklch, var(--reach-bg) 85%, transparent) 40%,
-    transparent 65%
-  );
-}
-
-/* vite: inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-background/60 to-transparent */
-.reach-hero__gradient--bottom {
-  inset-inline: 0;
-  bottom: 0;
-  height: 25%;
-  background: linear-gradient(
-    to top,
-    color-mix(in oklch, var(--reach-bg) 60%, transparent),
-    transparent
-  );
+  z-index: 1;
+  pointer-events: none;
+  display: block !important;
+  background-image:
+    linear-gradient(to left, var(--reach-hero-mask-color) 0%, transparent var(--reach-hero-mask-edge)),
+    linear-gradient(to right, var(--reach-hero-mask-color) 0%, transparent var(--reach-hero-mask-edge)),
+    linear-gradient(to top, var(--reach-hero-mask-bottom) 0%, transparent var(--reach-hero-mask-bottom-height)),
+    linear-gradient(
+      to right,
+      var(--reach-hero-mask-color) 0%,
+      var(--reach-hero-mask-mid) var(--reach-hero-mask-mid-stop),
+      transparent var(--reach-hero-mask-fade-end)
+    );
+  background-color: transparent;
 }
 
 .reach-hero__mobile-media {
@@ -2725,7 +2732,7 @@
   inset-inline: 0;
   bottom: 0;
   height: 33%;
-  background: linear-gradient(to top, var(--reach-bg), transparent);
+  background: linear-gradient(to top, var(--reach-hero-mask-color), var(--reach-hero-mask-bottom), transparent);
   pointer-events: none;
 }
 

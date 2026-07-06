@@ -30,6 +30,13 @@
         "cta_url": "/products/motion-rivalry-insight-stroke-gauge",
         "cta_label": "Reserve with $5 Deposit",
         "sticky_text": "Pay $5, Save 45% Off",
+        "mask_color": "#050914",
+        "mask_mid_opacity": 85,
+        "mask_mid_stop": 40,
+        "mask_fade_end": 65,
+        "mask_bottom_opacity": 60,
+        "mask_bottom_height": 25,
+        "mask_edge_width": 12,
         "padding_top": 0,
         "padding_bottom": 0
       }
